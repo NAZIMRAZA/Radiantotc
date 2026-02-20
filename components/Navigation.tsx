@@ -148,6 +148,16 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               Privacy Policy
             </Link>
 
+            {/* AML & KYC Policy */}
+            <Link
+              to="/compliance"
+              onClick={closeMenu}
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/compliance') ? 'text-cyan-400' : 'text-gray-400'
+                }`}
+            >
+              AML & KYC Policy
+            </Link>
+
             {/* Binance Details Item */}
             <button
               onClick={() => { setIsBinancePanelOpen(true); closeMenu(); }}

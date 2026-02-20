@@ -86,29 +86,189 @@ export const PolicyPage: React.FC<{ title: string; content: React.ReactNode }> =
 );
 
 export const AMLPolicyContent = () => (
-  <div className="space-y-8">
-    <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Compliance Protocol v2.4</p>
-    <p>RadiantVaultOTC (Radiantvault Ventures) is committed to the highest standards of Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) compliance under the FIU-IND framework.</p>
+  <div className="space-y-10 text-sm md:text-base">
+    <div className="space-y-4">
+      <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Last Updated: 01-OCT-2025</p>
+      <p>RadiantvaultOTC, operated by Radiantvault Ventures Private Limited, is committed to preventing money laundering, terrorist financing, fraud, and illegal activities.</p>
+    </div>
 
     <div className="space-y-4">
-      <h3 className="text-xl font-black font-orbitron text-white">1. KYC Mandatory Verification</h3>
-      <p>To ensure a secure trading environment, all individual customers must complete KYC verification. This is non-negotiable for accessing full trading features.</p>
-      <ul className="list-disc pl-6 space-y-2 text-sm">
-        <li>Provide full legal name, DOB, and contact details.</li>
-        <li>Upload Govt-issued ID (Aadhaar, PAN, or Passport).</li>
-        <li>Proof of Residence (Utility bills/Bank statements).</li>
-        <li>Mandatory real-time selfie for liveness verification.</li>
+      <h3 className="text-xl font-black font-orbitron text-white">1. Introduction</h3>
+      <p>We follow applicable Indian laws and international standards including:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Prevention of Money Laundering Act (PMLA)</li>
+        <li>FIU-IND reporting requirements</li>
+        <li>Information Technology Act, 2000</li>
+        <li>FATF Recommendations</li>
+      </ul>
+      <p>All users must comply with this AML & KYC Policy to trade with us.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">2. Purpose of AML & KYC</h3>
+      <p>The purpose of our AML & KYC process is to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Verify identity of users</li>
+        <li>Prevent fraud and chargebacks</li>
+        <li>Detect suspicious transactions</li>
+        <li>Comply with FIU-IND regulations</li>
+        <li>Protect Radiantvault Ventures Private Limited from legal risk</li>
+      </ul>
+      <p className="font-bold text-red-500">Trading without KYC is not allowed.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">3. Customer Identification (KYC Requirements)</h3>
+      <p>Every customer must submit:</p>
+
+      <p className="font-bold text-white mt-4">Mandatory Documents</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Aadhaar Card (Front & Back, clearly readable)</li>
+        <li>PAN Card</li>
+        <li>Selfie holding Aadhaar</li>
+        <li>Liveness Verification (Video or Face Match)</li>
+        <li>Active Mobile Number</li>
+      </ul>
+
+      <p className="font-bold text-white mt-4">Additional Verification (If Required)</p>
+      <p>We may request:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Bank statement</li>
+        <li>Income proof</li>
+        <li>Video call verification</li>
+        <li>Source of funds declaration</li>
+      </ul>
+      <p>Accounts failing verification will be rejected.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">4. Verification Standards</h3>
+      <p>RadiantvaultOTC ensures:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Name on PAN must match Aadhaar</li>
+        <li>Bank account must be same-name account</li>
+        <li>Documents must be original and valid</li>
+        <li>Images must be clear and unedited</li>
+      </ul>
+      <p>Fake or altered documents will lead to permanent ban.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">5. Ongoing Monitoring</h3>
+      <p>We continuously monitor accounts for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Large or unusual transactions</li>
+        <li>Multiple accounts</li>
+        <li>Chargeback risk</li>
+        <li>Suspicious payment patterns</li>
+        <li>Fraud or scam indicators</li>
+      </ul>
+      <p>We may pause or cancel trades if suspicious activity is detected.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">6. High-Risk Customers</h3>
+      <p>We do not trade with:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Anonymous users</li>
+        <li>Fake KYC users</li>
+        <li>Fraud-reported accounts</li>
+        <li>Users with previous chargebacks</li>
+        <li>Sanctioned individuals</li>
+        <li>Politically Exposed Persons (PEPs) without enhanced due diligence</li>
+      </ul>
+      <p>We reserve the right to deny service.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">7. Source of Funds Checks</h3>
+      <p>Users may be asked to provide proof of funds such as:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Salary slips</li>
+        <li>Business income proof</li>
+        <li>Bank statements</li>
+      </ul>
+      <p>This is required for FIU-IND compliance.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">8. Suspicious Activity Reporting</h3>
+      <p>If suspicious activity is detected, RadiantvaultOTC may:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Freeze account</li>
+        <li>Cancel trade</li>
+        <li>Report transaction to FIU-IND</li>
+        <li>Share information with banks</li>
+        <li>Inform law enforcement agencies</li>
+      </ul>
+      <p>Users will not be notified if reporting is required by law.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">9. Record Keeping</h3>
+      <p>We keep KYC and transaction records for the period required under Indian law and FIU guidelines. Records may include:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>KYC documents</li>
+        <li>Transaction history</li>
+        <li>IP logs</li>
+        <li>Communication records</li>
       </ul>
     </div>
 
     <div className="space-y-4">
-      <h3 className="text-xl font-black font-orbitron text-white">2. Transaction Monitoring</h3>
-      <p>We monitor all trades for suspicious patterns using advanced AI models. High-frequency or high-value transactions are subject to enhanced due diligence (EDD).</p>
+      <h3 className="text-xl font-black font-orbitron text-white">10. Chargeback and Fraud Policy</h3>
+      <p>If a user initiates chargeback after receiving crypto:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>KYC and trade records will be shared with banks and LEA</li>
+        <li>User must obtain NOC from Law Enforcement Agency</li>
+        <li>All legal and recovery costs must be paid by the user</li>
+      </ul>
+      <p>Legal action may be taken.</p>
     </div>
 
     <div className="space-y-4">
-      <h3 className="text-xl font-black font-orbitron text-white">3. Reporting Duties</h3>
-      <p>In accordance with PMLA guidelines, suspicious activity is reported to the Financial Intelligence Unit - India (FIU-IND) under registration <span className="text-white font-bold">REID-VA00058829</span>.</p>
+      <h3 className="text-xl font-black font-orbitron text-white">11. Employee Compliance</h3>
+      <p>RadiantvaultOTC staff are trained in AML procedures and required to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Maintain confidentiality</li>
+        <li>Report suspicious activity</li>
+        <li>Follow compliance protocols</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">12. User Responsibilities</h3>
+      <p>Users must:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Provide true information</li>
+        <li>Use own bank account</li>
+        <li>Avoid third-party payments</li>
+        <li>Report account compromise immediately</li>
+      </ul>
+      <p>Failure may result in account suspension.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">13. Data Protection</h3>
+      <p>All KYC data is encrypted and stored securely with restricted access.</p>
+      <p>We do not sell user data. Information may be shared only with regulators, banks, Binance, or law enforcement when legally required.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">14. Updates to Policy</h3>
+      <p>This AML & KYC Policy may be updated anytime. Continued use means acceptance.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">15. Contact</h3>
+      <p>Radiantvault Ventures Private Limited</p>
+      <p><span className="text-white font-bold">Email:</span> support@radiantvaultotc.com</p>
+      <p><span className="text-white font-bold">Phone:</span> 7829193944</p>
+      <p><span className="text-white font-bold">Registered Address:</span> V.NO-24/8/1, SLV Temple Road, Mangammanapalya Bangalore-560068, Karnataka</p>
+    </div>
+
+    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+      <p className="text-cyan-400 font-orbitron font-black text-sm tracking-widest uppercase">RadiantvaultOTC – Trusted FIU-Compliant Crypto OTC Trading in India</p>
     </div>
   </div>
 );
