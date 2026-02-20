@@ -312,7 +312,7 @@ const BottomLayout: React.FC = () => {
             <div className="space-y-4 md:space-y-6">
               <div className="flex items-center gap-3">
                 <Logo className="h-8 w-8 md:h-10 md:w-10" />
-                <span className="text-base md:text-xl font-black font-orbitron tracking-tighter">RV_OTC</span>
+                <span className="text-base md:text-xl font-black font-orbitron tracking-tighter">RadiantvaultOTC</span>
               </div>
               <p className="text-xs md:text-sm text-gray-600 font-medium">Enterprise infrastructure for the Bharat digital economy.</p>
               <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit">
