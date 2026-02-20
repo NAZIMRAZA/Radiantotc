@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, Link, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import AdList from './components/P2P/AdList';
 import KycForm from './components/KYC/KycForm';
@@ -288,57 +288,68 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-        <section className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 w-full">
-          <div className="glass-card rounded-2xl md:rounded-[3rem] p-1.5 md:p-2 overflow-hidden border-cyan-500/10 bg-black/50">
-            <img src="/images/radiantvaultotc.png" alt="Banner" className="w-full h-auto rounded-xl md:rounded-[2.8rem]" />
-          </div>
-        </section>
-
-        <footer className="bg-black/50 border-t border-white/5 py-12 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20 text-left">
-              <div className="space-y-4 md:space-y-6">
-                <div className="flex items-center gap-3">
-                  <Logo className="h-8 w-8 md:h-10 md:w-10" />
-                  <span className="text-base md:text-xl font-black font-orbitron tracking-tighter">RV_OTC</span>
-                </div>
-                <p className="text-xs md:text-sm text-gray-600 font-medium">Enterprise infrastructure for the Bharat digital economy.</p>
-                <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit">
-                  <span className="text-[8px] md:text-[10px] font-black font-orbitron tracking-widest text-cyan-400 uppercase">PROD NODE READY</span>
-                </div>
-              </div>
-              <div>
-                <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">System</h4>
-                <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
-                  <li><Link to="/admin" className="text-red-500 hover:text-red-400">Admin Login</Link></li>
-                  <li><Link to="/faq" className="hover:text-white">Knowledge Base</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Legal</h4>
-                <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
-                  <li><Link to="/terms" className="hover:text-white">Terms</Link></li>
-                  <li><Link to="/privacy" className="hover:text-white">Privacy</Link></li>
-                  <li><Link to="/compliance" className="hover:text-white">AML Protocol</Link></li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">HQ</h4>
-                <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed font-bold uppercase">Bangalore 560068, Karnataka, India</p>
-              </div>
-            </div>
-            <div className="border-t border-white/5 pt-8">
-              <div className="inline-block glass-card px-6 py-4 md:px-8 md:py-6 rounded-2xl md:rounded-[2rem] border-cyan-500/20 max-w-4xl w-full">
-                <p className="text-[9px] md:text-sm font-bold text-gray-400 leading-relaxed">
-                  <span className="text-cyan-400 font-orbitron font-black text-[10px] block mb-1 tracking-widest">OFFICIAL DECLARATION</span>
-                  <span className="text-white">{APP_CONFIG.LEGAL_NAME}</span> is FIU-IND registered: <span className="text-cyan-400">{APP_CONFIG.FIU_REG_ID}</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <BottomLayout />
       </div>
     </Router>
+  );
+};
+
+const BottomLayout: React.FC = () => {
+  const location = useLocation();
+  if (location.pathname === '/auth') return null;
+
+  return (
+    <>
+      <section className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 w-full">
+        <div className="glass-card rounded-2xl md:rounded-[3rem] p-1.5 md:p-2 overflow-hidden border-cyan-500/10 bg-black/50">
+          <img src="/images/radiantvaultotc.png" alt="Banner" className="w-full h-auto rounded-xl md:rounded-[2.8rem]" />
+        </div>
+      </section>
+
+      <footer className="bg-black/50 border-t border-white/5 py-12 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20 text-left">
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex items-center gap-3">
+                <Logo className="h-8 w-8 md:h-10 md:w-10" />
+                <span className="text-base md:text-xl font-black font-orbitron tracking-tighter">RV_OTC</span>
+              </div>
+              <p className="text-xs md:text-sm text-gray-600 font-medium">Enterprise infrastructure for the Bharat digital economy.</p>
+              <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit">
+                <span className="text-[8px] md:text-[10px] font-black font-orbitron tracking-widest text-cyan-400 uppercase">PROD NODE READY</span>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">System</h4>
+              <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
+                <li><Link to="/admin" className="text-red-500 hover:text-red-400">Admin Login</Link></li>
+                <li><Link to="/faq" className="hover:text-white">Knowledge Base</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Legal</h4>
+              <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
+                <li><Link to="/terms" className="hover:text-white">Terms</Link></li>
+                <li><Link to="/privacy" className="hover:text-white">Privacy</Link></li>
+                <li><Link to="/compliance" className="hover:text-white">AML Protocol</Link></li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">HQ</h4>
+              <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed font-bold uppercase">Bangalore 560068, Karnataka, India</p>
+            </div>
+          </div>
+          <div className="border-t border-white/5 pt-8">
+            <div className="inline-block glass-card px-6 py-4 md:px-8 md:py-6 rounded-2xl md:rounded-[2rem] border-cyan-500/20 max-w-4xl w-full">
+              <p className="text-[9px] md:text-sm font-bold text-gray-400 leading-relaxed">
+                <span className="text-cyan-400 font-orbitron font-black text-[10px] block mb-1 tracking-widest">OFFICIAL DECLARATION</span>
+                <span className="text-white">{APP_CONFIG.LEGAL_NAME}</span> is FIU-IND registered: <span className="text-cyan-400">{APP_CONFIG.FIU_REG_ID}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 };
 
