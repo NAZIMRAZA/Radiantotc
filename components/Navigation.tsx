@@ -46,11 +46,10 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`${
-                    isActive(item.path) || (item.path === '/' && location.hash === '')
+                  className={`${isActive(item.path) || (item.path === '/' && location.hash === '')
                       ? 'text-cyan-400 border-b-2 border-cyan-400'
                       : 'text-gray-400 hover:text-white'
-                  } transition-all duration-300 py-6 text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase`}
+                    } transition-all duration-300 py-6 text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase`}
                 >
                   {item.label}
                 </Link>
@@ -65,7 +64,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                     <span className="text-xs font-black text-white font-orbitron uppercase">{user.email.split('@')[0]}</span>
                     <span className="text-[9px] uppercase text-cyan-400 font-bold tracking-widest">{user.kycStatus}</span>
                   </div>
-                  <button 
+                  <button
                     onClick={onLogout}
                     className="border border-white/10 hover:border-red-500/50 hover:bg-red-500/10 text-gray-400 hover:text-red-500 px-4 py-2 rounded-lg text-xs font-bold transition-all uppercase"
                   >
@@ -77,8 +76,8 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                   <Link to="/auth" className="text-gray-400 px-2 py-2 text-xs font-black hover:text-white transition uppercase tracking-widest">
                     Login
                   </Link>
-                  <Link 
-                    to="/auth" 
+                  <Link
+                    to="/auth"
                     className="bg-cyan-500 text-black px-6 py-2.5 rounded-xl text-xs font-black hover:bg-cyan-400 transition shadow-[0_0_15px_rgba(0,242,255,0.3)] font-orbitron tracking-widest uppercase"
                   >
                     Sign Up
@@ -89,27 +88,27 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
 
             {/* Mobile Hamburger Button */}
             <div className="flex md:hidden items-center space-x-3">
-               {user && (
-                 <div className="flex flex-col items-end">
-                    <span className="text-[9px] font-black text-white font-orbitron uppercase truncate max-w-[60px]">{user.email.split('@')[0]}</span>
-                    <span className="text-[7px] uppercase text-cyan-400 font-bold tracking-tighter">{user.kycStatus}</span>
-                 </div>
-               )}
-               <button 
+              {user && (
+                <div className="flex flex-col items-end">
+                  <span className="text-[9px] font-black text-white font-orbitron uppercase truncate max-w-[60px]">{user.email.split('@')[0]}</span>
+                  <span className="text-[7px] uppercase text-cyan-400 font-bold tracking-tighter">{user.kycStatus}</span>
+                </div>
+              )}
+              <button
                 onClick={toggleMenu}
                 className="p-2 text-gray-400 hover:text-white transition-colors"
                 aria-label="Toggle Menu"
-               >
-                 {isMobileMenuOpen ? (
-                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                   </svg>
-                 ) : (
-                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
-                   </svg>
-                 )}
-               </button>
+              >
+                {isMobileMenuOpen ? (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -122,14 +121,23 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 key={item.path}
                 to={item.path}
                 onClick={closeMenu}
-                className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${
-                  isActive(item.path) || (item.path === '/' && location.hash === '') ? 'text-cyan-400' : 'text-gray-400'
-                }`}
+                className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive(item.path) || (item.path === '/' && location.hash === '') ? 'text-cyan-400' : 'text-gray-400'
+                  }`}
               >
                 {item.label}
               </Link>
             ))}
-            
+
+            {/* Privacy Policy Item */}
+            <Link
+              to="/privacy"
+              onClick={closeMenu}
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/privacy') ? 'text-cyan-400' : 'text-gray-400'
+                }`}
+            >
+              Privacy Policy
+            </Link>
+
             {/* Binance Details Item */}
             <button
               onClick={() => { setIsBinancePanelOpen(true); closeMenu(); }}
@@ -143,7 +151,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
 
             <div className="pt-4 mt-4 border-t border-white/5 space-y-4">
               {user ? (
-                <button 
+                <button
                   onClick={() => { onLogout(); closeMenu(); }}
                   className="w-full text-left py-3 text-sm font-black text-red-500 font-orbitron tracking-widest uppercase"
                 >
@@ -151,15 +159,15 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 </button>
               ) : (
                 <div className="grid grid-cols-2 gap-4">
-                  <Link 
-                    to="/auth" 
+                  <Link
+                    to="/auth"
                     onClick={closeMenu}
                     className="flex items-center justify-center py-4 border border-white/10 rounded-xl text-xs font-black text-white uppercase tracking-widest"
                   >
                     LOGIN
                   </Link>
-                  <Link 
-                    to="/auth" 
+                  <Link
+                    to="/auth"
                     onClick={closeMenu}
                     className="flex items-center justify-center py-4 bg-cyan-500 rounded-xl text-xs font-black text-black uppercase tracking-widest"
                   >
@@ -173,9 +181,9 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
       </nav>
 
       {/* Full-screen Slide-up Panel */}
-      <BinanceDetailsPanel 
-        isOpen={isBinancePanelOpen} 
-        onClose={() => setIsBinancePanelOpen(false)} 
+      <BinanceDetailsPanel
+        isOpen={isBinancePanelOpen}
+        onClose={() => setIsBinancePanelOpen(false)}
       />
     </>
   );

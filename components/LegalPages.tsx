@@ -4,7 +4,7 @@ import { APP_CONFIG } from '../constants';
 
 export const FAQPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  
+
   const faqs = [
     { q: "What is Radiantvault Ventures?", a: "Radiantvault Ventures is a leading peer-to-peer (P2P) cryptocurrency trading platform in India. We provide a secure, transparent, and user-friendly marketplace for individuals to trade digital assets directly with one another. By eliminating intermediaries, we offer faster and more decentralized trading options." },
     { q: "How do I create an account on Radiantvault Ventures?", a: "Step 1: Click on the Sign Up button. Step 2: Enter email, choice password. Step 3: Verify email. Once verified, log in and proceed to KYC." },
@@ -31,8 +31,8 @@ export const FAQPage: React.FC = () => {
     { q: "What is the future of Radiantvault Ventures?", a: "Expanding asset support, launching a mobile app, and entering international markets while remaining Bharat's #1 hub." }
   ];
 
-  const filteredFaqs = faqs.filter(f => 
-    f.q.toLowerCase().includes(searchTerm.toLowerCase()) || 
+  const filteredFaqs = faqs.filter(f =>
+    f.q.toLowerCase().includes(searchTerm.toLowerCase()) ||
     f.a.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -44,8 +44,8 @@ export const FAQPage: React.FC = () => {
       </div>
 
       <div className="relative mb-12">
-        <input 
-          type="text" 
+        <input
+          type="text"
           placeholder="SEARCH FAQ DATABASE..."
           className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 px-8 text-white font-orbitron text-sm focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20"
           value={searchTerm}
@@ -89,7 +89,7 @@ export const AMLPolicyContent = () => (
   <div className="space-y-8">
     <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Compliance Protocol v2.4</p>
     <p>RadiantVaultOTC (Radiantvault Ventures) is committed to the highest standards of Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) compliance under the FIU-IND framework.</p>
-    
+
     <div className="space-y-4">
       <h3 className="text-xl font-black font-orbitron text-white">1. KYC Mandatory Verification</h3>
       <p>To ensure a secure trading environment, all individual customers must complete KYC verification. This is non-negotiable for accessing full trading features.</p>
@@ -127,15 +127,142 @@ export const TermsOfServiceContent = () => (
 );
 
 export const PrivacyPolicyContent = () => (
-  <div className="space-y-8">
-    <p>We value your privacy at Radiantvault Ventures.</p>
+  <div className="space-y-10 text-sm md:text-base">
     <div className="space-y-4">
-      <h3 className="text-xl font-black font-orbitron text-white">Data Protection Layer</h3>
-      <p>Your identity documents are used solely for regulatory compliance and stored using 256-bit AES encryption. Aadhaar numbers are masked in accordance with UIDAI guidelines.</p>
+      <h3 className="text-xl font-black font-orbitron text-white">1️⃣ Legal Identity of Data Fiduciary</h3>
+      <p>Radiantvault Ventures Private Limited (“RadiantvaultOTC”) is the Data Fiduciary responsible for processing personal data under the Digital Personal Data Protection Act, 2023 (India).</p>
     </div>
+
     <div className="space-y-4">
-      <h3 className="text-xl font-black font-orbitron text-white">Contact Integrity</h3>
-      <p>For privacy queries, reach out to <span className="text-cyan-400 font-bold">radiantvaultventures@gmail.com</span>.</p>
+      <h3 className="text-xl font-black font-orbitron text-white">2️⃣ Categories of Data Collected</h3>
+      <p>We collect the following categories of personal data:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Aadhaar (front and back image)</li>
+        <li>PAN card details</li>
+        <li>Selfie holding Aadhaar</li>
+        <li>Liveness verification data</li>
+        <li>Mobile number (OTP verified)</li>
+        <li>Email address</li>
+        <li>IP address and device information</li>
+        <li>Transaction history</li>
+        <li>Banking/payment metadata</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">3️⃣ Purpose of Data Collection</h3>
+      <p>Personal data is collected strictly for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>KYC verification</li>
+        <li>AML compliance</li>
+        <li>Fraud prevention</li>
+        <li>Regulatory reporting to FIU-IND</li>
+        <li>Transaction execution</li>
+        <li>Dispute resolution and chargeback investigation</li>
+        <li>Legal compliance under PMLA 2002</li>
+      </ul>
+      <p>No data is collected for unrelated commercial exploitation.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">4️⃣ Legal Basis for Processing</h3>
+      <p>Processing is conducted based on:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>User consent</li>
+        <li>Statutory obligations under Indian law</li>
+        <li>Prevention of money laundering and fraud</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">5️⃣ Mandatory KYC Policy</h3>
+      <p>Trading access is granted only after successful KYC verification. RadiantvaultOTC does not allow anonymous transactions.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">6️⃣ Data Storage & Encryption</h3>
+      <p>All sensitive personal data is:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Stored in encrypted format</li>
+        <li>Secured using industry-standard encryption protocols</li>
+        <li>Protected against unauthorized access</li>
+      </ul>
+      <p>Document storage is access-restricted and monitored.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">7️⃣ Data Sharing & Disclosure</h3>
+      <p>Personal data may be shared with:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Law enforcement agencies (LEA)</li>
+        <li>FIU-IND</li>
+        <li>Banking partners (in case of disputes)</li>
+        <li>Regulatory authorities</li>
+      </ul>
+      <p>We do not sell personal data.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">8️⃣ Data Retention Policy</h3>
+      <p>Data is retained:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>For a minimum of 5 years as required under AML regulations</li>
+        <li>Longer if required for ongoing investigations or legal proceedings</li>
+      </ul>
+      <p>After retention expiry, data is securely deleted.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">9️⃣ User Rights Under DPDP Act</h3>
+      <p>Users have the right to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Access their personal data</li>
+        <li>Request correction</li>
+        <li>Request deletion (subject to legal retention requirements)</li>
+        <li>Withdraw consent where legally permissible</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">🔟 Withdrawal of Consent</h3>
+      <p>Withdrawal of consent may result in:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Account suspension</li>
+        <li>Termination of trading privileges</li>
+        <li>Regulatory reporting if applicable</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1️⃣1️⃣ Third-Party Service Providers</h3>
+      <p>We may use third-party KYC verification tools, hosting providers, and fraud monitoring services. These vendors are contractually obligated to maintain confidentiality and data security.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1️⃣2️⃣ Cross-Border Data Transfers</h3>
+      <p>If data is processed outside India, such transfer will comply with applicable Indian data protection regulations.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1️⃣3️⃣ Cookies & Technical Data</h3>
+      <p>We collect technical data such as:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Device identifiers</li>
+        <li>IP address</li>
+        <li>Browser type</li>
+        <li>Login timestamps</li>
+      </ul>
+      <p>This is used for fraud detection and security monitoring.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1️⃣4️⃣ Grievance Redressal Mechanism</h3>
+      <p>Users may contact the designated Grievance Officer for privacy concerns. Complaint response timeline shall comply with statutory requirements under Indian law.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1️⃣5️⃣ Policy Updates</h3>
+      <p>RadiantvaultOTC reserves the right to update this Privacy Policy to reflect regulatory or operational changes. Updated policies will be published on the website with effective date.</p>
     </div>
   </div>
 );
