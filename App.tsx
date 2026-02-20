@@ -289,8 +289,8 @@ const App: React.FC = () => {
         </main>
 
         <section className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 w-full">
-          <div className="glass-card rounded-2xl md:rounded-[3rem] p-1.5 md:p-2 overflow-hidden border-cyan-500/10">
-            <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1600" alt="Banner" className="w-full h-auto rounded-xl md:rounded-[2.8rem]" />
+          <div className="glass-card rounded-2xl md:rounded-[3rem] p-1.5 md:p-2 overflow-hidden border-cyan-500/10 bg-black/50">
+            <img src="/images/radiantvaultotc.png" alt="Banner" className="w-full h-auto rounded-xl md:rounded-[2.8rem]" />
           </div>
         </section>
 
