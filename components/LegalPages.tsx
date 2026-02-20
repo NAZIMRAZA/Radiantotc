@@ -114,15 +114,173 @@ export const AMLPolicyContent = () => (
 );
 
 export const TermsOfServiceContent = () => (
-  <div className="space-y-6 text-sm">
-    <p className="text-pink-400 font-bold">Last Updated: October 2024</p>
-    <p>By using RadiantVaultOTC, you agree to comply with the following terms:</p>
-    <ul className="space-y-4">
-      <li className="flex gap-4"><span className="text-cyan-500 font-black">01</span> You must be an Indian resident aged 18 or older.</li>
-      <li className="flex gap-4"><span className="text-cyan-500 font-black">02</span> All users must pay 1% TDS as per Section 194S of the Income Tax Act.</li>
-      <li className="flex gap-4"><span className="text-cyan-500 font-black">03</span> Radiantvault Ventures is a neutral technology provider; all P2P trades are executed at user discretion.</li>
-      <li className="flex gap-4"><span className="text-cyan-500 font-black">04</span> Fraudulent UTR submissions or bank chargebacks will result in permanent bans and legal action.</li>
-    </ul>
+  <div className="space-y-10 text-sm md:text-base">
+    <div className="space-y-4">
+      <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Last Updated: 01-OCT-2025</p>
+      <p>These terms are provided by <span className="text-white font-bold">RadiantvaultOTC</span>.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1. Introduction</h3>
+      <p>These Terms and Conditions govern your use of the website and services provided by Radiantvault Ventures Private Limited, operating under the trade name RadiantvaultOTC.</p>
+      <p>By using our website or trading with us, you agree to these Terms. If you do not agree, do not use our services.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">2. Company Information</h3>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li><span className="text-white font-bold">Legal Name:</span> Radiantvault Ventures Private Limited</li>
+        <li><span className="text-white font-bold">Trade Name:</span> RadiantvaultOTC</li>
+        <li><span className="text-white font-bold">Registered Address:</span> V.NO-24/8/1, SLV Temple Road, Mangammanapalya Bangalore-560068, Karnataka</li>
+        <li><span className="text-white font-bold">Email:</span> support@radiantvaultotc.com</li>
+      </ul>
+      <p>RadiantvaultOTC operates as a verified Binance P2P Pro Merchant and OTC crypto trading service.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">3. Eligibility</h3>
+      <p>You must:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Be at least 18 years old</li>
+        <li>Complete full KYC verification</li>
+        <li>Use your own bank account</li>
+        <li>Provide accurate information</li>
+      </ul>
+      <p>We reserve the right to refuse service to anyone.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">4. Mandatory KYC Requirement</h3>
+      <p>Trading with RadiantvaultOTC requires full KYC verification.</p>
+      <p>Required documents:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Aadhaar Card (Front & Back)</li>
+        <li>PAN Card</li>
+        <li>Selfie holding Aadhaar</li>
+        <li>Liveness check</li>
+        <li>Active mobile number</li>
+      </ul>
+      <p>If KYC is incomplete or suspicious, we will not trade.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">5. Trading Process</h3>
+      <ol className="list-decimal pl-6 space-y-2 text-gray-400">
+        <li>User places order on our website</li>
+        <li>User is redirected to our Binance P2P ad</li>
+        <li>Payment is made via Binance escrow system</li>
+        <li>Crypto released after payment confirmation</li>
+      </ol>
+      <p>We do not accept payments outside Binance order chat unless officially approved.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">6. Payment Rules</h3>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Only same-name bank account allowed</li>
+        <li>No third-party payments</li>
+        <li>No cash deposits</li>
+        <li>No suspicious transactions</li>
+      </ul>
+      <p>Violation may lead to account ban.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">7. Chargeback Policy</h3>
+      <p>If user initiates a chargeback after receiving crypto:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>User must immediately resolve dispute</li>
+        <li>User must obtain NOC from Law Enforcement Agency</li>
+        <li>All legal, banking, and investigation costs must be reimbursed to Radiantvault Ventures Private Limited</li>
+        <li>Legal action may be taken under Indian law</li>
+      </ul>
+      <p>User KYC and transaction data may be shared with banks and LEA.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">8. AML & FIU Compliance</h3>
+      <p>RadiantvaultOTC follows FIU-IND and PMLA guidelines. We may:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Monitor transactions</li>
+        <li>Reject suspicious trades</li>
+        <li>Freeze accounts</li>
+        <li>Report transactions to authorities</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">9. Fees</h3>
+      <p>We may charge:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Trading margins</li>
+        <li>Service fees</li>
+        <li>Legal handling fees</li>
+        <li>Chargeback investigation costs</li>
+      </ul>
+      <p>Fees will be displayed before order confirmation.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">10. Risks of Crypto Trading</h3>
+      <p>Crypto trading involves risks including:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Price volatility</li>
+        <li>Bank restrictions</li>
+        <li>Regulatory changes</li>
+        <li>Loss of funds</li>
+      </ul>
+      <p>RadiantvaultOTC does not provide investment advice.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">11. Limitation of Liability</h3>
+      <p>RadiantvaultOTC is not liable for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Binance platform issues</li>
+        <li>Bank delays</li>
+        <li>Blockchain congestion</li>
+        <li>User mistakes</li>
+      </ul>
+      <p>Our liability is limited to the trading amount.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">12. Account Suspension</h3>
+      <p>We may suspend accounts for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Fake KYC</li>
+        <li>Fraud attempts</li>
+        <li>Chargebacks</li>
+        <li>Abuse or threats</li>
+        <li>Suspicious activity</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">13. Intellectual Property</h3>
+      <p>All website content belongs to Radiantvault Ventures Private Limited. Do not copy or misuse.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">14. Jurisdiction</h3>
+      <p>All disputes are subject to courts in Bangalore, Karnataka, India.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">15. Updates to Terms</h3>
+      <p>We may update Terms anytime. Continued use means acceptance.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">16. Contact</h3>
+      <p>Radiantvault Ventures Private Limited</p>
+      <p><span className="text-white font-bold">Email:</span> support@radiantvaultotc.com</p>
+      <p><span className="text-white font-bold">Phone:</span> 7892193944</p>
+    </div>
+
+    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+      <p className="text-cyan-400 font-orbitron font-black text-sm tracking-widest uppercase">RadiantvaultOTC – Trusted FIU-Compliant Crypto OTC Trading</p>
+    </div>
   </div>
 );
 

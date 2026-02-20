@@ -47,8 +47,8 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                   key={item.path}
                   to={item.path}
                   className={`${isActive(item.path) || (item.path === '/' && location.hash === '')
-                      ? 'text-cyan-400 border-b-2 border-cyan-400'
-                      : 'text-gray-400 hover:text-white'
+                    ? 'text-cyan-400 border-b-2 border-cyan-400'
+                    : 'text-gray-400 hover:text-white'
                     } transition-all duration-300 py-6 text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase`}
                 >
                   {item.label}
@@ -127,6 +127,16 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 {item.label}
               </Link>
             ))}
+
+            {/* Terms & Conditions Item */}
+            <Link
+              to="/terms"
+              onClick={closeMenu}
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/terms') ? 'text-cyan-400' : 'text-gray-400'
+                }`}
+            >
+              Terms & Conditions
+            </Link>
 
             {/* Privacy Policy Item */}
             <Link
