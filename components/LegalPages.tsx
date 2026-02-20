@@ -584,3 +584,183 @@ export const PrivacyPolicyContent = () => (
     </div>
   </div>
 );
+
+export const RiskDisclosureContent = () => (
+  <div className="space-y-10 text-sm md:text-base">
+    <div className="space-y-4">
+      <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Last Updated: 01-OCT-2025</p>
+      <p>This Risk Disclosure Statement explains the risks associated with cryptocurrency trading through RadiantvaultOTC, operated by Radiantvault Ventures Private Limited.</p>
+      <p>Cryptocurrency trading involves significant financial risk. By using our services, you acknowledge and accept these risks. If you do not understand these risks, do not trade.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1. No Investment Advice</h3>
+      <p>RadiantvaultOTC provides OTC crypto trading services only. We do NOT provide:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Investment advice</li>
+        <li>Financial advice</li>
+        <li>Tax advice</li>
+        <li>Trading recommendations</li>
+      </ul>
+      <p>Users are responsible for their own decisions.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">2. Price Volatility Risk</h3>
+      <p>Cryptocurrency prices are highly volatile. Prices can rise or fall rapidly due to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Market demand</li>
+        <li>Global events</li>
+        <li>Regulatory announcements</li>
+        <li>Exchange liquidity</li>
+      </ul>
+      <p>You may lose part or all of your funds.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">3. Regulatory Risk in India</h3>
+      <p>Cryptocurrency regulations in India may change at any time. Possible risks include:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>New government restrictions</li>
+        <li>Banking limitations</li>
+        <li>Additional taxes</li>
+        <li>Trading bans</li>
+      </ul>
+      <p>Radiantvault Ventures Private Limited is not responsible for losses due to regulatory changes.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">4. Banking Risks</h3>
+      <p>Banks in India may delay or reject crypto-related transactions. Possible issues:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Payment reversal</li>
+        <li>Account freeze</li>
+        <li>Transaction failure</li>
+        <li>Bank investigation</li>
+      </ul>
+      <p>Users are responsible for resolving bank issues.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">5. Chargeback Risks</h3>
+      <p>If a payment is reversed after crypto release:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>User must resolve the dispute</li>
+        <li>User must obtain NOC from Law Enforcement Agency</li>
+        <li>All recovery costs must be reimbursed</li>
+      </ul>
+      <p>Legal action may be taken against fraudulent chargebacks.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">6. Binance Platform Risk</h3>
+      <p>RadiantvaultOTC trades through Binance P2P escrow. Risks may include:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Binance system downtime</li>
+        <li>Escrow delays</li>
+        <li>Platform policy changes</li>
+        <li>Binance account restrictions</li>
+      </ul>
+      <p>Radiantvault Ventures Private Limited is not responsible for Binance platform issues.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">7. Cybersecurity Risk</h3>
+      <p>Cryptocurrency accounts may be targeted by hackers. Risks include:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Phishing attacks</li>
+        <li>Malware</li>
+        <li>Password theft</li>
+        <li>SIM swap fraud</li>
+      </ul>
+      <p>Users must secure their accounts with strong passwords and 2FA.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">8. Blockchain Risks</h3>
+      <p>Blockchain transactions may be delayed due to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Network congestion</li>
+        <li>High fees</li>
+        <li>Technical issues</li>
+      </ul>
+      <p>Crypto transfers are irreversible. RadiantvaultOTC cannot recover wrongly sent crypto.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">9. Third-Party Payment Risk</h3>
+      <p>We only accept same-name bank payments. If user pays from third-party account:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Trade may be cancelled</li>
+        <li>Funds may be blocked</li>
+        <li>Legal issues may arise</li>
+      </ul>
+      <p>User is responsible.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">10. Taxation Risk</h3>
+      <p>Crypto transactions in India may be subject to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>30% tax on gains</li>
+        <li>1% TDS</li>
+        <li>Additional reporting requirements</li>
+      </ul>
+      <p>Users must consult their tax advisor. RadiantvaultOTC does not provide tax advice.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">11. Liquidity Risk</h3>
+      <p>At times, sufficient crypto or fiat liquidity may not be available. This may cause:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Order delays</li>
+        <li>Price slippage</li>
+        <li>Trade cancellation</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">12. Technical Risks</h3>
+      <p>Website or internet issues may affect trading. Possible issues:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Server downtime</li>
+        <li>Connectivity problems</li>
+        <li>Software bugs</li>
+      </ul>
+      <p>RadiantvaultOTC is not liable for technical interruptions beyond our control.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">13. Loss of Access Risk</h3>
+      <p>If you lose access to your email, phone, or Binance account, you may lose trading ability. RadiantvaultOTC cannot recover third-party accounts.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">14. Legal Risk</h3>
+      <p>Crypto trading laws differ by country. Users are responsible for complying with their local laws. Radiantvault Ventures Private Limited may suspend service if required by regulators.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">15. Acceptance of Risk</h3>
+      <p>By trading with RadiantvaultOTC, you confirm:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>You understand crypto risks</li>
+        <li>You accept financial responsibility</li>
+        <li>You are trading voluntarily</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">16. Contact</h3>
+      <p>Radiantvault Ventures Private Limited<br />
+        Trade Name: RadiantvaultOTC</p>
+      <p><span className="text-white font-bold">Email:</span> support@radiantvaultotc.com</p>
+      <p><span className="text-white font-bold">Phone:</span> 7829193944</p>
+      <p><span className="text-white font-bold">Registered Address:</span> V.NO-24/8/1, SLV Temple Road, Mangammanapalya Bangalore-560068, Karnataka</p>
+    </div>
+
+    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+      <p className="text-cyan-400 font-orbitron font-black text-sm tracking-widest uppercase">RadiantvaultOTC – Trusted FIU-Compliant Crypto OTC Trading in India</p>
+    </div>
+  </div>
+);
