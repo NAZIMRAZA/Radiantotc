@@ -432,9 +432,16 @@ const BottomLayout: React.FC = () => {
     <>
       <section className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 w-full">
         {location.pathname === '/' && (
-          <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-xl md:text-3xl font-black font-orbitron tracking-tighter text-white uppercase">
-              Are You Ready For Swift Your Trading Experience
+          <div className="text-center mb-8 md:mb-12 relative flex justify-center group cursor-default">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+            <h2 className="text-[16px] sm:text-2xl md:text-3xl lg:text-4xl font-black font-orbitron tracking-tighter uppercase relative transition-transform duration-500 group-hover:scale-105">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white drop-shadow-[0_0_10px_rgba(34,211,238,0.6)] group-hover:from-cyan-300 group-hover:via-white group-hover:to-cyan-300 transition-all duration-500">
+                Are You Ready For Swift {' '}
+              </span>
+              <br className="md:hidden" />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)] transition-all duration-500 animate-pulse">
+                Your Trading Experience
+              </span>
             </h2>
           </div>
         )}
