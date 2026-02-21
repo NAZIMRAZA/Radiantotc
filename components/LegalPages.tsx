@@ -1068,3 +1068,162 @@ export const RefundPolicyContent = () => (
     </div>
   </div>
 );
+
+export const FIUComplianceContent = () => (
+  <div className="space-y-10 text-sm md:text-base">
+    <div className="space-y-4">
+      <h2 className="text-2xl font-black font-orbitron text-white">FIU Compliance Statement</h2>
+      <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Last Updated: 10-OCT-2025</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1. Introduction</h3>
+      <p>RadiantvaultOTC is operated by Radiantvault Ventures Private Limited, an OTC cryptocurrency trading service committed to complying with Indian financial regulations and anti-money laundering requirements.</p>
+      <p>We follow applicable laws including:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Prevention of Money Laundering Act (PMLA)</li>
+        <li>Financial Intelligence Unit – India (FIU-IND) reporting requirements</li>
+        <li>Information Technology Act, 2000</li>
+        <li>FATF AML/CFT Guidelines</li>
+      </ul>
+      <p>Our objective is to provide safe, transparent, and compliant crypto trading services in India.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">2. FIU Compliance Commitment</h3>
+      <p>Radiantvault Ventures Private Limited maintains internal systems and policies to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Identify customers through KYC verification</li>
+        <li>Monitor transactions for suspicious activity</li>
+        <li>Maintain transaction records</li>
+        <li>Report suspicious transactions when required</li>
+        <li>Prevent fraud and financial crime</li>
+      </ul>
+      <p>We cooperate fully with FIU-IND and law enforcement agencies.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">3. Customer Due Diligence (CDD)</h3>
+      <p>All customers must complete full KYC verification before trading.</p>
+      <p>Required documents include:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Aadhaar Card</li>
+        <li>PAN Card</li>
+        <li>Selfie Verification</li>
+        <li>Liveness Check</li>
+        <li>Active Mobile Number</li>
+      </ul>
+      <p>Enhanced Due Diligence may be required for high-value or high-risk users.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">4. Transaction Monitoring</h3>
+      <p>RadiantvaultOTC monitors trading activity for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Unusual transaction patterns</li>
+        <li>Multiple account activity</li>
+        <li>Chargeback risk</li>
+        <li>Fraud indicators</li>
+        <li>Sanctioned or restricted entities</li>
+      </ul>
+      <p>Suspicious transactions may be paused or rejected.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">5. Reporting Obligations</h3>
+      <p>Radiantvault Ventures Private Limited may report transactions to FIU-IND when legally required.</p>
+      <p>We may also share information with:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Banks</li>
+        <li>Payment providers</li>
+        <li>Binance (for trade verification)</li>
+        <li>Law enforcement agencies</li>
+      </ul>
+      <p>Users may not be notified where disclosure is legally mandated.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">6. Record Retention</h3>
+      <p>We maintain records of:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>KYC documents</li>
+        <li>Transaction details</li>
+        <li>Communication logs</li>
+        <li>IP and device logs</li>
+      </ul>
+      <p>Records are retained for the period required under Indian law and FIU-IND guidelines.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">7. Employee Compliance &amp; Training</h3>
+      <p>RadiantvaultOTC employees receive AML compliance training and must:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Follow internal AML procedures</li>
+        <li>Report suspicious activity</li>
+        <li>Maintain confidentiality</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">8. Risk-Based Approach</h3>
+      <p>RadiantvaultOTC applies a risk-based approach to identify high-risk users including:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>High-volume traders</li>
+        <li>Unusual transaction patterns</li>
+        <li>Politically Exposed Persons (PEPs)</li>
+        <li>Users from restricted regions</li>
+      </ul>
+      <p>Additional verification may be required.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">9. Prohibited Activities</h3>
+      <p>RadiantvaultOTC does NOT support transactions related to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Money laundering</li>
+        <li>Terrorist financing</li>
+        <li>Fraud or scams</li>
+        <li>Illegal goods or services</li>
+        <li>Sanctioned individuals or entities</li>
+      </ul>
+      <p>Accounts involved in such activity will be suspended.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">10. User Responsibility</h3>
+      <p>Users must:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Provide accurate information</li>
+        <li>Use same-name bank account</li>
+        <li>Avoid third-party payments</li>
+        <li>Cooperate with compliance checks</li>
+      </ul>
+      <p>Failure may result in account suspension or reporting.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">11. Cooperation with Authorities</h3>
+      <p>Radiantvault Ventures Private Limited cooperates fully with:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>FIU-IND</li>
+        <li>Law Enforcement Agencies</li>
+        <li>Banks</li>
+        <li>Courts</li>
+      </ul>
+      <p>We may provide user information when legally required.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">12. Contact</h3>
+      <p>Radiantvault Ventures Private Limited<br />
+        Trade Name: RadiantvaultOTC<br />
+        <span className="text-white font-bold">Email:</span> support@radiantvaultotc.com<br />
+        <span className="text-white font-bold">Phone:</span> 7829193944<br />
+        <span className="text-white font-bold">Registered Address:</span> V.NO-24/8/1, SLV Temple Road, Mangammanapalya Bangalore-560068, Karnataka</p>
+    </div>
+
+    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+      <p className="text-cyan-400 font-orbitron font-black text-sm tracking-widest uppercase">RadiantvaultOTC – Trusted FIU-Compliant Crypto OTC Trading in India</p>
+    </div>
+  </div>
+);

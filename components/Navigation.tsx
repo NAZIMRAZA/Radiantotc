@@ -92,6 +92,14 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                   </div>
                 </div>
               </div>
+
+              {/* FIU Compliance Desktop */}
+              <Link
+                to="/fiu-compliance"
+                className={`${isActive('/fiu-compliance') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 py-6 text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase flex items-center`}
+              >
+                FIU COMPLIANCE
+              </Link>
             </div>
 
             {/* Right Actions (Desktop) */}
@@ -217,6 +225,16 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 }`}
             >
               Cookie Policy
+            </Link>
+
+            {/* FIU Compliance Mobile */}
+            <Link
+              to="/fiu-compliance"
+              onClick={closeMenu}
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/fiu-compliance') ? 'text-cyan-400' : 'text-gray-400'
+                }`}
+            >
+              FIU Compliance
             </Link>
 
             {/* Binance Details Item */}
