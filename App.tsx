@@ -265,48 +265,92 @@ const App: React.FC = () => {
                   <img src="/images/World.gif" alt="Global Reach" className="w-full h-auto object-cover rounded-[inherit] opacity-80 group-hover:opacity-100 transition-opacity" />
                 </section>
 
-                {/* 4. AML & KYC POLICIES SECTION */}
+                {/* 4. FIU COMPLIANCE SECTION */}
                 <section className="max-w-7xl mx-auto px-4 w-full">
-                  <div className="glass-card p-6 md:p-12 rounded-3xl md:rounded-[4rem] border-red-500/20 bg-gradient-to-b from-red-500/5 to-transparent">
+                  <div className="glass-card p-6 md:p-12 rounded-3xl md:rounded-[4rem] border-cyan-500/20 bg-gradient-to-b from-cyan-500/5 to-transparent">
                     <div className="text-center mb-8 md:mb-16 space-y-2">
-                      <h2 className="text-2xl md:text-4xl font-black font-orbitron tracking-tighter uppercase">AML Protocol</h2>
+                      <h2 className="text-2xl md:text-4xl font-black font-orbitron tracking-tighter uppercase">FIU Compliance</h2>
                       <p className="text-gray-500 font-bold uppercase tracking-widest text-[8px] md:text-xs">Secure trading environment guidelines</p>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-                      <div className="space-y-6 md:space-y-8">
-                        <h3 className="text-sm md:text-xl font-black font-orbitron text-white uppercase tracking-widest flex items-center gap-3">
-                          <span className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-red-500 flex items-center justify-center text-[10px] md:text-xs">01</span>
-                          Mandatory Verification
-                        </h3>
-                        <div className="grid grid-cols-1 gap-4 md:gap-6">
-                          {[
-                            { t: "ID Protocol", d: "Name, DOB, contact via Govt ID." },
-                            { t: "Documents", d: "Aadhaar, PAN, or Passport upload." },
-                            { t: "Liveness", d: "Real-time selfie matching confirmation." }
-                          ].map((step, i) => (
-                            <div key={i} className="flex gap-4 group">
-                              <div className="shrink-0 w-1.5 h-1.5 bg-red-500 rounded-full mt-2"></div>
-                              <div>
-                                <h4 className="text-white font-bold text-[11px] md:text-sm uppercase tracking-tight">{step.t}</h4>
-                                <p className="text-gray-500 text-[9px] md:text-xs font-medium">{step.d}</p>
-                              </div>
-                            </div>
-                          ))}
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                      {/* Card 1: FIU-Compliant */}
+                      <div className="glass-card p-6 rounded-3xl border-white/5 space-y-4 bg-black/40 hover:border-cyan-500/30 transition-colors">
+                        <div className="text-3xl">🔐</div>
+                        <h3 className="text-[11px] md:text-[13px] font-black font-orbitron text-white uppercase tracking-widest leading-tight">FIU-Compliant & Regulation-First</h3>
+                        <div className="text-[10px] md:text-xs text-gray-400 font-medium leading-relaxed space-y-2">
+                          <p>RadiantvaultOTC operates under a strict compliance framework aligned with Indian VDA regulations and FIU-IND reporting obligations.</p>
+                          <p>We maintain a fully KYC-verified trading environment to ensure transparency, fraud prevention, and regulatory adherence.</p>
                         </div>
                       </div>
-                      <div className="space-y-6 bg-black/40 p-5 md:p-8 rounded-2xl md:rounded-3xl border border-white/5">
-                        <h3 className="text-sm md:text-xl font-black font-orbitron text-cyan-400 uppercase tracking-widest">Compliance</h3>
-                        <ul className="space-y-4 md:space-y-6">
-                          <li className="space-y-1">
-                            <span className="text-[8px] md:text-[10px] font-black text-gray-500 uppercase tracking-widest">FIU REGISTRATION</span>
-                            <p className="text-gray-400 font-medium text-[11px] md:text-sm">REID-VA00058829</p>
-                          </li>
-                          <li className="space-y-1">
-                            <span className="text-[8px] md:text-[10px] font-black text-gray-500 uppercase tracking-widest">1% TDS (SEC 194S)</span>
-                            <p className="text-gray-400 font-medium text-[11px] md:text-sm">Automated tax handling for every VDA transaction.</p>
-                          </li>
-                        </ul>
-                        <Link to="/compliance" className="inline-block text-[9px] md:text-xs font-black text-cyan-400 font-orbitron uppercase border-b border-cyan-400/30 pb-1">Full AML Policy →</Link>
+
+                      {/* Card 2: 1% TDS */}
+                      <div className="glass-card p-6 rounded-3xl border-white/5 space-y-4 bg-black/40 hover:border-cyan-500/30 transition-colors">
+                        <div className="text-3xl">🧾</div>
+                        <h3 className="text-[11px] md:text-[13px] font-black font-orbitron text-white uppercase tracking-widest leading-tight">1% TDS Compliance</h3>
+                        <div className="text-[10px] md:text-xs text-gray-400 font-medium leading-relaxed space-y-2">
+                          <p>In accordance with Section 194S of the Income Tax Act (India):</p>
+                          <ul className="list-disc pl-4 space-y-1">
+                            <li>1% TDS is applicable on eligible VDA transactions.</li>
+                            <li>TDS compliance is monitored and executed.</li>
+                            <li>Users are responsible for tax reporting accuracy.</li>
+                          </ul>
+                          <p>We operate strictly within the Indian VDA framework (30% tax regime + 1% TDS).</p>
+                        </div>
+                      </div>
+
+                      {/* Card 3: 100% KYC */}
+                      <div className="glass-card p-6 rounded-3xl border-white/5 space-y-4 bg-black/40 hover:border-cyan-500/30 transition-colors">
+                        <div className="text-3xl">🪪</div>
+                        <h3 className="text-[11px] md:text-[13px] font-black font-orbitron text-white uppercase tracking-widest leading-tight">100% KYC Verified Trading</h3>
+                        <div className="text-[10px] md:text-xs text-gray-400 font-medium leading-relaxed space-y-2">
+                          <p>To maintain regulatory integrity and prevent misuse, we verify:</p>
+                          <ul className="list-disc pl-4 space-y-1">
+                            <li>Aadhaar (Front & Back) & PAN Card</li>
+                            <li>Selfie with Aadhaar & Liveness Verification</li>
+                            <li>OTP-Verified Mobile Number</li>
+                          </ul>
+                          <p className="text-red-400 font-bold uppercase pt-1">No anonymous or partially verified accounts permitted.</p>
+                        </div>
+                      </div>
+
+                      {/* Card 4: Fast Execution */}
+                      <div className="glass-card p-6 rounded-3xl border-white/5 space-y-4 bg-black/40 hover:border-cyan-500/30 transition-colors">
+                        <div className="text-3xl">⚡</div>
+                        <h3 className="text-[11px] md:text-[13px] font-black font-orbitron text-white uppercase tracking-widest leading-tight">Fast Transaction Processing</h3>
+                        <div className="text-[10px] md:text-xs text-gray-400 font-medium leading-relaxed space-y-2">
+                          <ul className="list-disc pl-4 space-y-1">
+                            <li>Order placement via RadiantvaultOTC</li>
+                            <li>Secure redirection to official Binance P2P listing</li>
+                            <li>Real-time coordination & monitoring for payment</li>
+                          </ul>
+                          <p>Processing speed depends on banking timelines, but our workflow is optimized for efficiency.</p>
+                        </div>
+                      </div>
+
+                      {/* Card 5: Safe Environment */}
+                      <div className="glass-card p-6 rounded-3xl border-white/5 space-y-4 bg-black/40 hover:border-cyan-500/30 transition-colors">
+                        <div className="text-3xl">🛡</div>
+                        <h3 className="text-[11px] md:text-[13px] font-black font-orbitron text-white uppercase tracking-widest leading-tight">Safe & Secure Environment</h3>
+                        <div className="text-[10px] md:text-xs text-gray-400 font-medium leading-relaxed space-y-2">
+                          <p>Our infrastructure includes:</p>
+                          <ul className="list-disc pl-4 space-y-1">
+                            <li>Encrypted data & Role-based access controls</li>
+                            <li>Transaction monitoring & Anti-fraud risk checks</li>
+                            <li>Third-party payment prohibition & Chargeback defense</li>
+                          </ul>
+                          <p>We follow a risk-based AML approach aligning with PMLA & FIU standards.</p>
+                        </div>
+                      </div>
+
+                      {/* Card 6: Transparency */}
+                      <div className="glass-card p-6 rounded-3xl border-white/5 space-y-4 bg-black/40 hover:border-cyan-500/30 transition-colors">
+                        <div className="text-3xl">🔎</div>
+                        <h3 className="text-[11px] md:text-[13px] font-black font-orbitron text-white uppercase tracking-widest leading-tight">Transparency & Accountability</h3>
+                        <div className="text-[10px] md:text-xs text-gray-400 font-medium leading-relaxed space-y-2">
+                          <p>RadiantvaultOTC does not facilitate anonymous crypto trading.</p>
+                          <p>Trade execution occurs via the Binance P2P escrow mechanism, ensuring additional transaction security, transparency, and accountability.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
