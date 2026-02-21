@@ -764,3 +764,153 @@ export const RiskDisclosureContent = () => (
     </div>
   </div>
 );
+
+export const ChargebackPolicyContent = () => (
+  <div className="space-y-10 text-sm md:text-base">
+    <div className="space-y-4">
+      <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Last Updated: 10-OCT-2025</p>
+      <p>This Chargeback & Payment Dispute Agreement applies to all users trading with RadiantvaultOTC, operated by Radiantvault Ventures Private Limited.</p>
+      <p>By trading with us, you agree to these terms. This agreement is legally binding.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1. Definition of Chargeback</h3>
+      <p>A chargeback or payment dispute includes:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Bank reversal request</li>
+        <li>UPI dispute</li>
+        <li>IMPS/RTGS reversal</li>
+        <li>Payment fraud complaint</li>
+        <li>Unauthorized transaction claim</li>
+      </ul>
+      <p>after crypto has been released.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">2. Same-Name Payment Rule</h3>
+      <p>Users must pay only from their own bank account matching their KYC name. Third-party payments are strictly prohibited.</p>
+      <p>If third-party payment is used:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Trade may be cancelled</li>
+        <li>Funds may be frozen</li>
+        <li>Legal action may be taken</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">3. Chargeback After Crypto Release</h3>
+      <p>If a user initiates chargeback after receiving crypto, the user must immediately:</p>
+      <ol className="list-decimal pl-6 space-y-2 text-gray-400">
+        <li>Inform RadiantvaultOTC</li>
+        <li>Contact their bank</li>
+        <li>Withdraw the complaint</li>
+        <li>Provide written confirmation</li>
+      </ol>
+      <p>Failure to cooperate will result in legal action.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">4. Mandatory NOC Requirement</h3>
+      <p>User must obtain an official No Objection Certificate (NOC) from the Law Enforcement Agency or bank confirming that:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Complaint has been withdrawn</li>
+        <li>No fraud claim exists</li>
+      </ul>
+      <p>This NOC must be sent to our bank and Radiantvault Ventures Private Limited.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">5. Liability for Losses</h3>
+      <p>If chargeback causes loss to Radiantvault Ventures Private Limited, the user agrees to pay:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Crypto value loss</li>
+        <li>Bank penalties</li>
+        <li>Legal fees</li>
+        <li>Investigation costs</li>
+        <li>Compliance costs</li>
+        <li>Recovery expenses</li>
+      </ul>
+      <p>Payment must be made within 7 days of notice.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">6. Legal Action</h3>
+      <p>Radiantvault Ventures Private Limited may take legal action under:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Indian Penal Code</li>
+        <li>IT Act 2000</li>
+        <li>PMLA</li>
+        <li>Banking fraud laws</li>
+      </ul>
+      <p>We may file FIR or civil recovery suit. User KYC and transaction details may be shared with banks and law enforcement.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">7. Account Blacklisting</h3>
+      <p>Users involved in chargebacks will be:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Permanently banned</li>
+        <li>Reported to exchanges</li>
+        <li>Added to internal blacklist</li>
+      </ul>
+      <p>Future trades will be denied.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">8. False Fraud Claims</h3>
+      <p>If user falsely claims payment fraud after receiving crypto, it will be treated as criminal fraud.</p>
+      <p>Radiantvault Ventures Private Limited reserves right to recover damages.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">9. Dispute Resolution Process</h3>
+      <p>If payment dispute occurs:</p>
+      <ol className="list-decimal pl-6 space-y-2 text-gray-400">
+        <li>User must contact support within 24 hours</li>
+        <li>Provide transaction proof</li>
+        <li>Cooperate with bank investigation</li>
+        <li>Follow instructions from RadiantvaultOTC</li>
+      </ol>
+      <p>Failure may lead to account suspension.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">10. No Responsibility for User Bank Issues</h3>
+      <p>RadiantvaultOTC is not responsible for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>User bank restrictions</li>
+        <li>Frozen accounts</li>
+        <li>Payment delays</li>
+      </ul>
+      <p>User must resolve bank issues themselves.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">11. Acceptance of Agreement</h3>
+      <p>By trading with RadiantvaultOTC, you confirm:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>You will not initiate fraudulent chargebacks</li>
+        <li>You understand legal consequences</li>
+        <li>You agree to reimburse losses</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">12. Jurisdiction</h3>
+      <p>All disputes are subject to courts in Bangalore, Karnataka, India.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">13. Contact</h3>
+      <p>Radiantvault Ventures Private Limited<br />
+        Trade Name: RadiantvaultOTC</p>
+      <p><span className="text-white font-bold">Email:</span> support@radiantvaultotc.com</p>
+      <p><span className="text-white font-bold">Phone:</span> 7829193944</p>
+      <p><span className="text-white font-bold">Registered Address:</span> V.NO-24/8/1, SLV Temple Road, Mangammanapalya Bangalore-560068, Karnataka</p>
+    </div>
+
+    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+      <p className="text-cyan-400 font-orbitron font-black text-sm tracking-widest uppercase">RadiantvaultOTC – Trusted FIU-Compliant Crypto OTC Trading in India</p>
+    </div>
+  </div>
+);

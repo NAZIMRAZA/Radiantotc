@@ -168,6 +168,16 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               Risk Disclosure Statement
             </Link>
 
+            {/* Chargeback Policy */}
+            <Link
+              to="/chargeback"
+              onClick={closeMenu}
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/chargeback') ? 'text-cyan-400' : 'text-gray-400'
+                }`}
+            >
+              Chargeback Policy
+            </Link>
+
             {/* Binance Details Item */}
             <button
               onClick={() => { setIsBinancePanelOpen(true); closeMenu(); }}
