@@ -128,7 +128,6 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 <div className="flex items-center space-x-4">
                   <div className="flex flex-col items-end">
                     <span className="text-xs font-black text-white font-orbitron uppercase">{user.email.split('@')[0]}</span>
-                    <span className="text-[9px] uppercase text-cyan-400 font-bold tracking-widest">{user.kycStatus}</span>
                   </div>
                   <button
                     onClick={onLogout}
@@ -157,7 +156,6 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               {user && (
                 <div className="flex flex-col items-end">
                   <span className="text-[9px] font-black text-white font-orbitron uppercase truncate max-w-[60px]">{user.email.split('@')[0]}</span>
-                  <span className="text-[7px] uppercase text-cyan-400 font-bold tracking-tighter">{user.kycStatus}</span>
                 </div>
               )}
               <button
