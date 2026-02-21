@@ -11,6 +11,14 @@ import { FAQPage, PolicyPage, AMLPolicyContent, TermsOfServiceContent, CookiePol
 import { AssetType, TradeSide, P2PAd, TradeStatus, Trade, User, KycStatus } from './types';
 import { APP_CONFIG, MOCK_PRICES } from './constants';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 const App: React.FC = () => {
   const [selectedAsset, setSelectedAsset] = useState<AssetType>(AssetType.USDT);
   const [tradeSide, setTradeSide] = useState<TradeSide>(TradeSide.BUY);
@@ -86,6 +94,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-[#030712] text-[#f3f4f6]">
         <Navigation user={user} onLogout={handleLogout} />
 
@@ -327,9 +336,9 @@ const BottomLayout: React.FC = () => {
                 <h4 className="text-[10px] font-black font-orbitron tracking-widest text-white uppercase">HQ</h4>
                 <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed font-bold uppercase">Bangalore 560068, Karnataka, India</p>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit mt-4">
+              <Link to="/admin" className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit mt-4 hover:border-cyan-500/50 hover:bg-white/10 transition-colors">
                 <span className="text-[8px] md:text-[10px] font-black font-orbitron tracking-widest text-cyan-400 uppercase">PROD NODE READY</span>
-              </div>
+              </Link>
             </div>
             <div>
               <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Platform</h4>
@@ -337,7 +346,6 @@ const BottomLayout: React.FC = () => {
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/" className="hover:text-cyan-400 transition-colors">Exchange</Link></li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/faq" className="hover:text-cyan-400 transition-colors">Help / FAQs</Link></li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/contact" className="hover:text-cyan-400 transition-colors">Contact Us</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span><Link to="/admin" className="text-red-500 hover:text-red-400 transition-colors">Admin Login</Link></li>
               </ul>
             </div>
             <div>
