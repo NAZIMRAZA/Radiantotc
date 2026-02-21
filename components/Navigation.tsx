@@ -11,6 +11,7 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileComplianceOpen, setIsMobileComplianceOpen] = useState(false);
   const [isBinancePanelOpen, setIsBinancePanelOpen] = useState(false);
   const location = useLocation();
   const isActive = (path: string) => location.hash === `#${path}`;
@@ -18,7 +19,6 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
   const navItems = [
     { label: 'P2P TRADING', path: '/' },
     { label: 'FAQ', path: '/faq' },
-    { label: 'COMPLIANCE', path: '/compliance' },
   ];
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -54,6 +54,27 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                   {item.label}
                 </Link>
               ))}
+
+              {/* Desktop Compliance Dropdown */}
+              <div className="relative group flex items-center h-full">
+                <button
+                  className={`${location.hash.includes('/compliance') || location.hash.includes('/terms') || location.hash.includes('/risk') || location.hash.includes('/chargeback') || location.hash.includes('/refund') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase gap-1`}
+                >
+                  COMPLIANCE
+                  <svg className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className="absolute top-[80%] left-0 w-64 bg-black/95 backdrop-blur-3xl border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+                  <div className="py-2 flex flex-col">
+                    <Link to="/compliance" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">AML & KYC Policy</Link>
+                    <Link to="/terms" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">Terms & Conditions</Link>
+                    <Link to="/risk" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">Risk Disclosure Stmt</Link>
+                    <Link to="/chargeback" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">Chargeback Policy</Link>
+                    <Link to="/refund" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">Refund Policy</Link>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Right Actions (Desktop) */}
@@ -128,15 +149,29 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               </Link>
             ))}
 
-            {/* Terms & Conditions Item */}
-            <Link
-              to="/terms"
-              onClick={closeMenu}
-              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/terms') ? 'text-cyan-400' : 'text-gray-400'
-                }`}
-            >
-              Terms & Conditions
-            </Link>
+            {/* Compliance Section */}
+            <div className="space-y-2">
+              <button
+                onClick={() => setIsMobileComplianceOpen(!isMobileComplianceOpen)}
+                className={`w-full text-left py-3 text-sm font-black font-orbitron tracking-widest uppercase flex justify-between items-center ${isMobileComplianceOpen || location.hash.includes('/compliance') ? 'text-cyan-400' : 'text-gray-400'
+                  }`}
+              >
+                COMPLIANCE
+                <svg className={`w-4 h-4 transition-transform duration-300 ${isMobileComplianceOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div className={`overflow-hidden transition-all duration-300 ${isMobileComplianceOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="pl-4 border-l border-white/10 space-y-2 py-2">
+                  <Link to="/compliance" onClick={closeMenu} className={`block py-2 text-[11px] font-bold uppercase tracking-widest ${isActive('/compliance') ? 'text-cyan-400' : 'text-gray-500'}`}>AML & KYC Policy</Link>
+                  <Link to="/terms" onClick={closeMenu} className={`block py-2 text-[11px] font-bold uppercase tracking-widest ${isActive('/terms') ? 'text-cyan-400' : 'text-gray-500'}`}>Terms & Conditions</Link>
+                  <Link to="/risk" onClick={closeMenu} className={`block py-2 text-[11px] font-bold uppercase tracking-widest ${isActive('/risk') ? 'text-cyan-400' : 'text-gray-500'}`}>Risk Disclosure Stmt</Link>
+                  <Link to="/chargeback" onClick={closeMenu} className={`block py-2 text-[11px] font-bold uppercase tracking-widest ${isActive('/chargeback') ? 'text-cyan-400' : 'text-gray-500'}`}>Chargeback Policy</Link>
+                  <Link to="/refund" onClick={closeMenu} className={`block py-2 text-[11px] font-bold uppercase tracking-widest ${isActive('/refund') ? 'text-cyan-400' : 'text-gray-500'}`}>Refund Policy</Link>
+                </div>
+              </div>
+            </div>
 
             {/* Privacy Policy Item */}
             <Link
@@ -146,46 +181,6 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 }`}
             >
               Privacy Policy
-            </Link>
-
-            {/* AML & KYC Policy */}
-            <Link
-              to="/compliance"
-              onClick={closeMenu}
-              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/compliance') ? 'text-cyan-400' : 'text-gray-400'
-                }`}
-            >
-              AML & KYC Policy
-            </Link>
-
-            {/* Risk Disclosure Statement */}
-            <Link
-              to="/risk"
-              onClick={closeMenu}
-              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/risk') ? 'text-cyan-400' : 'text-gray-400'
-                }`}
-            >
-              Risk Disclosure Statement
-            </Link>
-
-            {/* Chargeback Policy */}
-            <Link
-              to="/chargeback"
-              onClick={closeMenu}
-              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/chargeback') ? 'text-cyan-400' : 'text-gray-400'
-                }`}
-            >
-              Chargeback Policy
-            </Link>
-
-            {/* Refund Policy */}
-            <Link
-              to="/refund"
-              onClick={closeMenu}
-              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/refund') ? 'text-cyan-400' : 'text-gray-400'
-                }`}
-            >
-              Refund Policy
             </Link>
 
             {/* Binance Details Item */}
