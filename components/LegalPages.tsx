@@ -1227,3 +1227,160 @@ export const FIUComplianceContent = () => (
     </div>
   </div>
 );
+
+export const WebsiteDisclaimerContent = () => (
+  <div className="space-y-10 text-sm md:text-base">
+    <div className="space-y-4">
+      <h2 className="text-2xl font-black font-orbitron text-white">Website Disclaimer</h2>
+      <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Last Updated: 10-OCT-2025</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1. General Information</h3>
+      <p>The information provided on this website is for general informational purposes only.</p>
+      <p>This website is operated by Radiantvault Ventures Private Limited, trading as RadiantvaultOTC, an OTC cryptocurrency trading service.</p>
+      <p>By using this website, you agree to this Disclaimer.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">2. No Investment Advice</h3>
+      <p>RadiantvaultOTC does NOT provide:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Investment advice</li>
+        <li>Financial advice</li>
+        <li>Trading recommendations</li>
+        <li>Tax advice</li>
+      </ul>
+      <p>All trading decisions are made solely by the user.</p>
+      <p>Users should consult financial and tax advisors before trading cryptocurrency.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">3. Cryptocurrency Risk</h3>
+      <p>Cryptocurrency trading is highly risky.</p>
+      <p>Prices are volatile and may change rapidly.</p>
+      <p>Users may lose part or all of their funds.</p>
+      <p>Radiantvault Ventures Private Limited is not responsible for trading losses.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">4. Regulatory Disclaimer</h3>
+      <p>Cryptocurrency laws in India and other countries may change at any time.</p>
+      <p>Users are responsible for understanding and complying with local laws.</p>
+      <p>RadiantvaultOTC is not liable for losses due to regulatory changes.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">5. Binance Platform Disclaimer</h3>
+      <p>RadiantvaultOTC trades are executed through Binance P2P escrow.</p>
+      <p>We are not responsible for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Binance system downtime</li>
+        <li>Binance account restrictions</li>
+        <li>Binance policy changes</li>
+        <li>Binance platform errors</li>
+      </ul>
+      <p>Users must follow Binance terms separately.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">6. Payment &amp; Banking Disclaimer</h3>
+      <p>Banks may delay or block crypto-related payments.</p>
+      <p>Radiantvault Ventures Private Limited is not responsible for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Bank restrictions</li>
+        <li>Payment failures</li>
+        <li>Frozen accounts</li>
+        <li>Chargeback investigations</li>
+      </ul>
+      <p>Users must resolve bank issues themselves.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">7. Accuracy of Information</h3>
+      <p>We try to keep website information accurate and updated.</p>
+      <p>However, we do not guarantee:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Completeness</li>
+        <li>Accuracy</li>
+        <li>Timeliness</li>
+      </ul>
+      <p>Information may change without notice.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">8. Third-Party Links</h3>
+      <p>Our website may contain links to third-party websites such as Binance or payment providers.</p>
+      <p>We are not responsible for their content, policies, or services.</p>
+      <p>Users should review third-party policies separately.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">9. Technical Disclaimer</h3>
+      <p>We do not guarantee uninterrupted website operation.</p>
+      <p>Issues may occur due to:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Internet failures</li>
+        <li>Server downtime</li>
+        <li>Cyber attacks</li>
+        <li>Software bugs</li>
+      </ul>
+      <p>RadiantvaultOTC is not liable for losses caused by technical problems beyond our control.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">10. Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, Radiantvault Ventures Private Limited is not liable for:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Trading losses</li>
+        <li>Missed profits</li>
+        <li>Technical issues</li>
+        <li>Bank problems</li>
+        <li>Third-party service failures</li>
+      </ul>
+      <p>Our liability is limited to the amount of the trade involved.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">11. User Responsibility</h3>
+      <p>Users must:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Provide correct KYC information</li>
+        <li>Use own bank account</li>
+        <li>Follow AML rules</li>
+        <li>Keep login credentials secure</li>
+      </ul>
+      <p>Failure may result in account suspension.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">12. Intellectual Property</h3>
+      <p>All website content, logo, and design belong to Radiantvault Ventures Private Limited.</p>
+      <p>Unauthorized copying is prohibited.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">13. Jurisdiction</h3>
+      <p>All disputes are subject to courts in Bangalore, Karnataka, India.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">14. Updates</h3>
+      <p>This Disclaimer may be updated anytime.</p>
+      <p>Continued use of the website means acceptance of changes.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">15. Contact</h3>
+      <p>Radiantvault Ventures Private Limited<br />
+        Trade Name: RadiantvaultOTC<br />
+        <span className="text-white font-bold">Email:</span> support@radiantvaultotc.com<br />
+        <span className="text-white font-bold">Phone:</span> 7829193944<br />
+        <span className="text-white font-bold">Registered Address:</span> V.NO-24/8/1, SLV Temple Road, Mangammanapalya Bangalore-560068, Karnataka</p>
+    </div>
+
+    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+      <p className="text-cyan-400 font-orbitron font-black text-sm tracking-widest uppercase">RadiantvaultOTC – Trusted FIU-Compliant Crypto OTC Trading in India</p>
+    </div>
+  </div>
+);

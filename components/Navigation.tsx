@@ -100,6 +100,14 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               >
                 FIU COMPLIANCE
               </Link>
+
+              {/* Website Disclaimer Desktop */}
+              <Link
+                to="/disclaimer"
+                className={`${isActive('/disclaimer') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 py-6 text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase flex items-center`}
+              >
+                WEBSITE DISCLAIMER
+              </Link>
             </div>
 
             {/* Right Actions (Desktop) */}
@@ -235,6 +243,16 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 }`}
             >
               FIU Compliance
+            </Link>
+
+            {/* Website Disclaimer Mobile */}
+            <Link
+              to="/disclaimer"
+              onClick={closeMenu}
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/disclaimer') ? 'text-cyan-400' : 'text-gray-400'
+                }`}
+            >
+              Website Disclaimer
             </Link>
 
             {/* Binance Details Item */}
