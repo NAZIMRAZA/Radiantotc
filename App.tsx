@@ -11,6 +11,7 @@ import { FAQPage, PolicyPage, AMLPolicyContent, TermsOfServiceContent, CookiePol
 import { AssetType, TradeSide, P2PAd, TradeStatus, Trade, User, KycStatus } from './types';
 import { APP_CONFIG, MOCK_PRICES } from './constants';
 import { CountUp } from './components/BinanceDetailsPanel';
+import FeedbackSlider from './components/FeedbackSlider';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -364,7 +365,13 @@ const App: React.FC = () => {
                       <p className="text-cyan-400 font-black uppercase tracking-[0.2em] text-[8px] md:text-[10px]">Verified Network Feedback</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    {/* Mobile Slider */}
+                    <div className="block md:hidden w-full">
+                      <FeedbackSlider />
+                    </div>
+
+                    {/* Desktop Grid */}
+                    <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                       {[
                         { name: "Aarav M.", location: "Mumbai, MH", text: "Fastest UPI settlement I've experienced. Node released USDT in 4 mins.", rating: 5 },
                         { name: "Deepika K.", location: "Bangalore, KA", text: "FIU registration is the main reason I moved my volume here.", rating: 5 },
