@@ -432,24 +432,31 @@ const BottomLayout: React.FC = () => {
     <>
       <section className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 w-full">
         {location.pathname === '/' && (
-          <div className="text-center mb-8 md:mb-12 relative flex justify-center group cursor-default">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-            <h2 className="text-[16px] sm:text-2xl md:text-3xl lg:text-4xl font-black font-orbitron tracking-tighter uppercase relative transition-transform duration-500 group-hover:scale-105">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white drop-shadow-[0_0_10px_rgba(34,211,238,0.6)] group-hover:from-cyan-300 group-hover:via-white group-hover:to-cyan-300 transition-all duration-500">
-                Are You Ready For Swift {' '}
-              </span>
-              <br className="md:hidden" />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)] transition-all duration-500 animate-pulse">
-                Your Trading Experience
-              </span>
-            </h2>
+          <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12">
+            <div className="text-center relative flex justify-center group cursor-default">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <h2 className="text-[16px] sm:text-2xl md:text-3xl lg:text-4xl font-black font-orbitron tracking-tighter uppercase relative transition-transform duration-500 group-hover:scale-105">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white drop-shadow-[0_0_10px_rgba(34,211,238,0.6)] group-hover:from-cyan-300 group-hover:via-white group-hover:to-cyan-300 transition-all duration-500">
+                  Are You Ready For Swift {' '}
+                </span>
+                <br className="md:hidden" />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)] transition-all duration-500 animate-pulse">
+                  Your Trading Experience
+                </span>
+              </h2>
+            </div>
+
+            <a
+              href="https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#FCD535] text-black px-8 py-4 md:px-12 md:py-5 rounded-2xl font-black font-orbitron uppercase text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(252,213,53,0.3)] hover:shadow-[0_0_40px_rgba(252,213,53,0.6)] active:scale-95"
+            >
+              <img src="https://bin.bnbstatic.com/static/images/common/favicon.ico" className="w-5 h-5 md:w-6 md:h-6 rounded-md" alt="Binance" />
+              Trade on Binance
+            </a>
           </div>
         )}
-        <div className="glass-card rounded-2xl md:rounded-[3rem] p-1.5 md:p-2 overflow-hidden border-cyan-500/10 bg-black/50 cursor-pointer hover:border-cyan-500/30 transition-colors">
-          <a href="https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec" target="_blank" rel="noopener noreferrer">
-            <img src="/images/radiantvaultotc.png" alt="Banner" className="w-full h-auto rounded-xl md:rounded-[2.8rem] hover:opacity-90 transition-opacity" />
-          </a>
-        </div>
       </section>
 
       <footer className="bg-black/50 border-t border-white/5 py-12 md:py-24">
