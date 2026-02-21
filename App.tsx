@@ -26,7 +26,7 @@ const App: React.FC = () => {
     {
       id: 'ad_1',
       userId: 'user_99',
-      userName: 'DesiTrader_Pro',
+      userName: 'BharatCrypto_X',
       side: TradeSide.SELL,
       asset: AssetType.USDT,
       price: usdtPrice,
