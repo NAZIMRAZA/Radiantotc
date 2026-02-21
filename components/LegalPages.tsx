@@ -1384,3 +1384,39 @@ export const WebsiteDisclaimerContent = () => (
     </div>
   </div>
 );
+
+export const ContactUsContent = () => (
+  <div className="space-y-10 text-sm md:text-base">
+    <div className="space-y-4">
+      <h2 className="text-2xl font-black font-orbitron text-white">Contact Us</h2>
+      <p>If you have questions about our services, policies, or need assistance with a trade, our support team is available to help.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">Customer Support</h3>
+      <p>For general inquiries, trade assistance, or compliance questions, please contact us through the following channels:</p>
+      <p><span className="text-white font-bold">Email:</span> support@radiantvaultotc.com</p>
+      <p><span className="text-white font-bold">Phone:</span> +91 7829193944</p>
+      <p>We aim to respond to all support requests within a reasonable timeframe.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">Registered Office</h3>
+      <p>Radiantvault Ventures Private Limited<br />
+        V.NO-24/8/1, SLV Temple Road<br />
+        Mangammanapalya, Bangalore – 560068<br />
+        Karnataka, India</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">Business Information</h3>
+      <p><span className="text-white font-bold">Trade Name:</span> RadiantvaultOTC<br />
+        <span className="text-white font-bold">Operating Entity:</span> Radiantvault Ventures Private Limited</p>
+      <p>For legal, compliance, or regulatory matters, please contact us via email with full details so our team can assist appropriately.</p>
+    </div>
+
+    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+      <p className="text-cyan-400 font-orbitron font-black text-sm tracking-widest uppercase">RadiantvaultOTC – Trusted FIU-Compliant Crypto OTC Trading in India</p>
+    </div>
+  </div>
+);

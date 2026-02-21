@@ -7,7 +7,7 @@ import TradeRoom from './components/Trade/TradeRoom';
 import AuthPage from './components/Auth/AuthPage';
 import AdminPanel from './components/Admin/AdminPanel';
 import Logo from './components/Logo';
-import { FAQPage, PolicyPage, AMLPolicyContent, TermsOfServiceContent, CookiePolicyContent, RiskDisclosureContent, ChargebackPolicyContent, RefundPolicyContent, FIUComplianceContent, WebsiteDisclaimerContent } from './components/LegalPages';
+import { FAQPage, PolicyPage, AMLPolicyContent, TermsOfServiceContent, CookiePolicyContent, RiskDisclosureContent, ChargebackPolicyContent, RefundPolicyContent, FIUComplianceContent, WebsiteDisclaimerContent, ContactUsContent } from './components/LegalPages';
 import { AssetType, TradeSide, P2PAd, TradeStatus, Trade, User, KycStatus } from './types';
 import { APP_CONFIG, MOCK_PRICES } from './constants';
 
@@ -285,6 +285,7 @@ const App: React.FC = () => {
             <Route path="/compliance" element={<PolicyPage title="AML & Compliance" content={<AMLPolicyContent />} />} />
             <Route path="/fiu-compliance" element={<PolicyPage title="FIU Compliance" content={<FIUComplianceContent />} />} />
             <Route path="/disclaimer" element={<PolicyPage title="Website Disclaimer" content={<WebsiteDisclaimerContent />} />} />
+            <Route path="/contact" element={<PolicyPage title="Contact Us" content={<ContactUsContent />} />} />
             <Route path="/terms" element={<PolicyPage title="Terms of Service" content={<TermsOfServiceContent />} />} />
             <Route path="/cookies" element={<PolicyPage title="Cookie Policy" content={<CookiePolicyContent />} />} />
             <Route path="/risk" element={<PolicyPage title="Risk Disclosure Statement" content={<RiskDisclosureContent />} />} />

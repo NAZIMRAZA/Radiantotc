@@ -112,6 +112,14 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                   </div>
                 </div>
               </div>
+
+              {/* Contact Us Desktop */}
+              <Link
+                to="/contact"
+                className={`${isActive('/contact') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 py-6 text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase flex items-center`}
+              >
+                CONTACT US
+              </Link>
             </div>
 
             {/* Right Actions (Desktop) */}
@@ -251,6 +259,16 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 </div>
               </div>
             </div>
+
+            {/* Contact Us Mobile */}
+            <Link
+              to="/contact"
+              onClick={closeMenu}
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/contact') ? 'text-cyan-400' : 'text-gray-400'
+                }`}
+            >
+              Contact Us
+            </Link>
 
             {/* Binance Details Item */}
             <button
