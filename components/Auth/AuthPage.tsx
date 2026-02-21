@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { User, KycStatus } from '../../types';
+import { auth } from '../../firebase';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 interface AuthPageProps {
   onLogin: (user: User) => void;
@@ -8,31 +10,53 @@ interface AuthPageProps {
 const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     phone: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
-    // Simulating a network request
-    setTimeout(() => {
-      const mockUser: User = {
-        id: `user_${Math.random().toString(36).substr(2, 5)}`,
-        email: formData.email,
-        phone: formData.phone || 'N/A',
-        kycStatus: KycStatus.PENDING,
-        isFrozen: false,
-        twoFactorEnabled: false,
-        tradeSuccessRate: 100,
-        completedTrades: 0,
-      };
-      onLogin(mockUser);
+    setError(null);
+
+    try {
+      if (isLogin) {
+        const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password);
+        const firebaseUser = userCredential.user;
+        const mockUser: User = {
+          id: firebaseUser.uid,
+          email: firebaseUser.email || formData.email,
+          phone: firebaseUser.phoneNumber || formData.phone || 'N/A',
+          kycStatus: KycStatus.PENDING,
+          isFrozen: false,
+          twoFactorEnabled: false,
+          tradeSuccessRate: 100,
+          completedTrades: 0,
+        };
+        onLogin(mockUser);
+      } else {
+        const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+        const firebaseUser = userCredential.user;
+        const mockUser: User = {
+          id: firebaseUser.uid,
+          email: firebaseUser.email || formData.email,
+          phone: formData.phone || 'N/A',
+          kycStatus: KycStatus.PENDING,
+          isFrozen: false,
+          twoFactorEnabled: false,
+          tradeSuccessRate: 100,
+          completedTrades: 0,
+        };
+        onLogin(mockUser);
+      }
+    } catch (err: any) {
+      setError(err.message || 'Authentication failed. Please try again.');
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -49,6 +73,15 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin }) => {
             {isLogin ? 'Log in to start trading digital assets' : 'Join the most trusted P2P platform in India'}
           </p>
         </div>
+
+        {error && (
+          <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-xs font-bold flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
