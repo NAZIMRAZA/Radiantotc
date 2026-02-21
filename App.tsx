@@ -325,8 +325,8 @@ const BottomLayout: React.FC = () => {
 
       <footer className="bg-black/50 border-t border-white/5 py-12 md:py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-16 mb-12 md:mb-20 text-left">
-            <div className="col-span-2 space-y-4 md:space-y-6">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 mb-12 md:mb-20 text-left">
+            <div className="lg:w-2/5 space-y-4 md:space-y-6">
               <div className="flex items-center gap-3">
                 <Logo className="h-8 w-8 md:h-10 md:w-10" />
                 <span className="text-base md:text-xl font-black font-orbitron tracking-tighter">RadiantvaultOTC</span>
@@ -340,31 +340,34 @@ const BottomLayout: React.FC = () => {
                 <span className="text-[8px] md:text-[10px] font-black font-orbitron tracking-widest text-cyan-400 uppercase">PROD NODE READY</span>
               </Link>
             </div>
-            <div>
-              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Platform</h4>
-              <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/" className="hover:text-cyan-400 transition-colors">Exchange</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/faq" className="hover:text-cyan-400 transition-colors">Help / FAQs</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/contact" className="hover:text-cyan-400 transition-colors">Contact Us</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Compliance</h4>
-              <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/terms" className="hover:text-cyan-400 transition-colors">Terms & Conditions</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/risk" className="hover:text-cyan-400 transition-colors">Risk Disclosure</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/chargeback" className="hover:text-cyan-400 transition-colors">Chargeback Policy</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/refund" className="hover:text-cyan-400 transition-colors">Refund Policy</Link></li>
-              </ul>
-            </div>
-            <div className="col-span-2 lg:col-span-1">
-              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Resources</h4>
-              <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/compliance" className="hover:text-cyan-400 transition-colors">AML & KYC Policy</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/fiu-compliance" className="hover:text-cyan-400 transition-colors">FIU Stmt</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/cookies" className="hover:text-cyan-400 transition-colors">Cookie Policy</Link></li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/disclaimer" className="hover:text-cyan-400 transition-colors">Website Disclaimer</Link></li>
-              </ul>
+
+            <div className="lg:w-3/5 grid grid-cols-3 gap-4 sm:gap-8">
+              <div>
+                <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Platform</h4>
+                <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/" className="hover:text-cyan-400 transition-colors">Exchange</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/faq" className="hover:text-cyan-400 transition-colors">Help / FAQs</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/contact" className="hover:text-cyan-400 transition-colors">Contact Us</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Compliance</h4>
+                <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/terms" className="hover:text-cyan-400 transition-colors">Terms</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/risk" className="hover:text-cyan-400 transition-colors">Risk</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/chargeback" className="hover:text-cyan-400 transition-colors">Chargeback</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/refund" className="hover:text-cyan-400 transition-colors">Refund</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Resources</h4>
+                <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/compliance" className="hover:text-cyan-400 transition-colors">AML Policy</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/fiu-compliance" className="hover:text-cyan-400 transition-colors">FIU Stmt</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/cookies" className="hover:text-cyan-400 transition-colors">Cookies</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/disclaimer" className="hover:text-cyan-400 transition-colors">Disclaimer</Link></li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className="border-t border-white/5 pt-8">
