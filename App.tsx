@@ -165,7 +165,7 @@ const App: React.FC = () => {
                           <div className="flex items-center gap-4">
                             <div className="h-16 w-16 md:h-20 md:w-20 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600 p-[2px]">
                               <div className="h-full w-full rounded-2xl bg-black flex items-center justify-center">
-                                <img src="https://lh3.googleusercontent.com/d/1qIVJ0mMNCPtL-qs23g1y0TRSG9m0tYpD" alt="RV" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
+                                <Logo className="w-10 h-10 md:w-12 md:h-12" />
                               </div>
                             </div>
                             <div>
