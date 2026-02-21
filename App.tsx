@@ -316,35 +316,47 @@ const BottomLayout: React.FC = () => {
 
       <footer className="bg-black/50 border-t border-white/5 py-12 md:py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20 text-left">
-            <div className="space-y-4 md:space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-16 mb-12 md:mb-20 text-left">
+            <div className="space-y-4 md:space-y-6 lg:col-span-2">
               <div className="flex items-center gap-3">
                 <Logo className="h-8 w-8 md:h-10 md:w-10" />
                 <span className="text-base md:text-xl font-black font-orbitron tracking-tighter">RadiantvaultOTC</span>
               </div>
               <p className="text-xs md:text-sm text-gray-600 font-medium">Enterprise infrastructure for the Bharat digital economy.</p>
-              <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit">
+              <div className="space-y-2">
+                <h4 className="text-[10px] font-black font-orbitron tracking-widest text-white uppercase">HQ</h4>
+                <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed font-bold uppercase">Bangalore 560068, Karnataka, India</p>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit mt-4">
                 <span className="text-[8px] md:text-[10px] font-black font-orbitron tracking-widest text-cyan-400 uppercase">PROD NODE READY</span>
               </div>
             </div>
             <div>
-              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">System</h4>
+              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Platform</h4>
               <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
-                <li><Link to="/admin" className="text-red-500 hover:text-red-400">Admin Login</Link></li>
-                <li><Link to="/faq" className="hover:text-white">Knowledge Base</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/" className="hover:text-cyan-400 transition-colors">Exchange</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/faq" className="hover:text-cyan-400 transition-colors">Help / FAQs</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/contact" className="hover:text-cyan-400 transition-colors">Contact Us</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span><Link to="/admin" className="text-red-500 hover:text-red-400 transition-colors">Admin Login</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Legal</h4>
+              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Compliance</h4>
               <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
-                <li><Link to="/terms" className="hover:text-white">Terms</Link></li>
-                <li><Link to="/privacy" className="hover:text-white">Privacy</Link></li>
-                <li><Link to="/compliance" className="hover:text-white">AML Protocol</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/terms" className="hover:text-cyan-400 transition-colors">Terms & Conditions</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/risk" className="hover:text-cyan-400 transition-colors">Risk Disclosure</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/chargeback" className="hover:text-cyan-400 transition-colors">Chargeback Policy</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/refund" className="hover:text-cyan-400 transition-colors">Refund Policy</Link></li>
               </ul>
             </div>
-            <div className="space-y-4">
-              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">HQ</h4>
-              <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed font-bold uppercase">Bangalore 560068, Karnataka, India</p>
+            <div>
+              <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Resources</h4>
+              <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/compliance" className="hover:text-cyan-400 transition-colors">AML & KYC Policy</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/fiu-compliance" className="hover:text-cyan-400 transition-colors">FIU Stmt</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/cookies" className="hover:text-cyan-400 transition-colors">Cookie Policy</Link></li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span><Link to="/disclaimer" className="hover:text-cyan-400 transition-colors">Website Disclaimer</Link></li>
+              </ul>
             </div>
           </div>
           <div className="border-t border-white/5 pt-8">
