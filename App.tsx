@@ -431,6 +431,13 @@ const BottomLayout: React.FC = () => {
   return (
     <>
       <section className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 w-full">
+        {location.pathname === '/' && (
+          <div className="text-center mb-6 md:mb-10">
+            <h2 className="text-xl md:text-3xl font-black font-orbitron tracking-tighter text-white uppercase">
+              Are You Ready For Swift Your Trading Experience
+            </h2>
+          </div>
+        )}
         <div className="glass-card rounded-2xl md:rounded-[3rem] p-1.5 md:p-2 overflow-hidden border-cyan-500/10 bg-black/50 cursor-pointer hover:border-cyan-500/30 transition-colors">
           <a href="https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec" target="_blank" rel="noopener noreferrer">
             <img src="/images/radiantvaultotc.png" alt="Banner" className="w-full h-auto rounded-xl md:rounded-[2.8rem] hover:opacity-90 transition-opacity" />
