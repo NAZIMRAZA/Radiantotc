@@ -26,7 +26,7 @@ const App: React.FC = () => {
     {
       id: 'ad_1',
       userId: 'user_99',
-      userName: 'BharatCrypto_X',
+      userName: 'RadiantVaultOTC',
       side: TradeSide.SELL,
       asset: AssetType.USDT,
       price: usdtPrice,
@@ -39,7 +39,7 @@ const App: React.FC = () => {
     {
       id: 'ad_2',
       userId: 'user_102',
-      userName: 'BharatCrypto_X',
+      userName: 'RadiantVaultOTC',
       side: TradeSide.SELL,
       asset: AssetType.USDT,
       price: usdtPrice + 0.05,
@@ -307,8 +307,10 @@ const BottomLayout: React.FC = () => {
   return (
     <>
       <section className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 w-full">
-        <div className="glass-card rounded-2xl md:rounded-[3rem] p-1.5 md:p-2 overflow-hidden border-cyan-500/10 bg-black/50">
-          <img src="/images/radiantvaultotc.png" alt="Banner" className="w-full h-auto rounded-xl md:rounded-[2.8rem]" />
+        <div className="glass-card rounded-2xl md:rounded-[3rem] p-1.5 md:p-2 overflow-hidden border-cyan-500/10 bg-black/50 cursor-pointer hover:border-cyan-500/30 transition-colors">
+          <a href="https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec" target="_blank" rel="noopener noreferrer">
+            <img src="/images/radiantvaultotc.png" alt="Banner" className="w-full h-auto rounded-xl md:rounded-[2.8rem] hover:opacity-90 transition-opacity" />
+          </a>
         </div>
       </section>
 
