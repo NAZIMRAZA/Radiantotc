@@ -5,7 +5,7 @@ interface BinanceDetailsPanelProps {
   onClose: () => void;
 }
 
-const CountUp: React.FC<{ end: number; duration?: number; decimals?: number; suffix?: string }> = ({ end, duration = 1000, decimals = 0, suffix = "" }) => {
+export const CountUp: React.FC<{ end: number; duration?: number; decimals?: number; suffix?: string }> = ({ end, duration = 1000, decimals = 0, suffix = "" }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const BinanceDetailsPanel: React.FC<BinanceDetailsPanelProps> = ({ isOpen, onClo
           <span className="text-[10px] font-black text-cyan-400 font-orbitron tracking-widest uppercase">Verified Merchant</span>
           <h2 className="text-xl font-black text-white font-orbitron tracking-tighter">TRADE WITH BINANCE</h2>
         </div>
-        <button 
+        <button
           onClick={onClose}
           className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
         >
@@ -65,7 +65,7 @@ const BinanceDetailsPanel: React.FC<BinanceDetailsPanelProps> = ({ isOpen, onClo
               <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">Professional Crypto Exchange</p>
             </div>
           </div>
-          
+
           <div className="flex gap-2">
             <div className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-[9px] font-black text-gray-400 uppercase tracking-widest">Last Seen: 8 hours ago</div>
             <div className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-[9px] font-black text-gray-400 uppercase tracking-widest">Joined: 2024-09-29</div>
@@ -96,7 +96,7 @@ const BinanceDetailsPanel: React.FC<BinanceDetailsPanelProps> = ({ isOpen, onClo
               <p className="text-2xl font-black text-white font-orbitron"><CountUp end={681} /></p>
             </div>
           </div>
-          
+
           <div className="glass-card p-6 rounded-2xl border-green-500/20 bg-green-500/5 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 p-2 opacity-20">
               <svg className="w-12 h-12 text-green-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
@@ -120,7 +120,7 @@ const BinanceDetailsPanel: React.FC<BinanceDetailsPanelProps> = ({ isOpen, onClo
 
       {/* 4. CTA Button (Fixed Bottom) */}
       <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/90 to-transparent">
-        <a 
+        <a
           href="https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec"
           target="_blank"
           rel="noopener noreferrer"

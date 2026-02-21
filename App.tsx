@@ -10,6 +10,7 @@ import Logo from './components/Logo';
 import { FAQPage, PolicyPage, AMLPolicyContent, TermsOfServiceContent, CookiePolicyContent, RiskDisclosureContent, ChargebackPolicyContent, RefundPolicyContent, FIUComplianceContent, WebsiteDisclaimerContent, ContactUsContent } from './components/LegalPages';
 import { AssetType, TradeSide, P2PAd, TradeStatus, Trade, User, KycStatus } from './types';
 import { APP_CONFIG, MOCK_PRICES } from './constants';
+import { CountUp } from './components/BinanceDetailsPanel';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -145,32 +146,89 @@ const App: React.FC = () => {
                   </div>
                 </section>
 
-                {/* 2. ABOUT US SECTION */}
-                <section id="about-us" className="max-w-7xl mx-auto px-4 scroll-mt-24 w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
-                    <div className="space-y-4 md:space-y-8">
-                      <h2 className="text-3xl md:text-5xl font-black font-orbitron tracking-tighter uppercase">About Us</h2>
-                      <div className="h-1 w-16 md:w-24 bg-gradient-to-r from-cyan-500 to-purple-500"></div>
-                      <p className="text-sm md:text-xl text-gray-400 leading-relaxed font-medium">
-                        Simplifying crypto for Bharat. As a premier Indian P2P platform, we connect you directly, fostering a transparent and decentralized trade layer.
-                      </p>
-                      <p className="text-xs md:text-lg text-gray-500 leading-relaxed font-medium italic border-l-2 md:border-l-4 border-cyan-500 pl-4 md:pl-6">
-                        Headquartered in Bangalore, our team is passionate about empowering the Bharat digital economy.
-                      </p>
+                {/* 2. TRADE WITH BINANCE SECTION */}
+                <section id="trade-with-binance" className="max-w-7xl mx-auto px-4 scroll-mt-24 w-full">
+                  <div className="glass-card p-6 md:p-12 rounded-3xl md:rounded-[4rem] border-white/5 bg-gradient-to-b from-white/5 to-transparent relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-8 md:p-16 opacity-5">
+                      <svg className="w-32 h-32 md:w-64 md:h-64 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     </div>
-                    <div className="grid grid-cols-2 gap-3 md:gap-4">
-                      {[
-                        { title: "Connect", icon: "🤝", desc: "P2P Liquidity" },
-                        { title: "Vault", icon: "🛡️", desc: "Escrow Shield" },
-                        { title: "Bharat", icon: "🇮🇳", desc: "VDA Compliant" },
-                        { title: "Support", icon: "📞", desc: "24/7 Desk" }
-                      ].map((feat, i) => (
-                        <div key={i} className="glass-card p-4 md:p-8 rounded-2xl md:rounded-3xl border-white/5 space-y-2">
-                          <span className="text-xl md:text-3xl">{feat.icon}</span>
-                          <h4 className="font-black text-white font-orbitron text-[9px] md:text-xs tracking-widest uppercase">{feat.title}</h4>
-                          <p className="text-[8px] md:text-xs text-gray-500 font-bold">{feat.desc}</p>
+
+                    <div className="text-center mb-8 md:mb-12 space-y-2 relative z-10">
+                      <span className="text-[10px] md:text-xs font-black text-cyan-400 font-orbitron tracking-widest uppercase">Verified Merchant</span>
+                      <h2 className="text-2xl md:text-4xl font-black text-white font-orbitron tracking-tighter uppercase">Trade With Binance</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 relative z-10">
+                      <div className="space-y-8">
+                        {/* Identity */}
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-4">
+                            <div className="h-16 w-16 md:h-20 md:w-20 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600 p-[2px]">
+                              <div className="h-full w-full rounded-2xl bg-black flex items-center justify-center">
+                                <img src="https://lh3.googleusercontent.com/d/1qIVJ0mMNCPtL-qs23g1y0TRSG9m0tYpD" alt="RV" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
+                              </div>
+                            </div>
+                            <div>
+                              <div className="flex items-center gap-2">
+                                <h3 className="text-2xl md:text-3xl font-black text-white font-orbitron tracking-tighter">RadiantVaultOTC</h3>
+                                <span className="bg-yellow-500/20 text-yellow-500 text-[10px] md:text-xs font-black px-2 py-0.5 rounded border border-yellow-500/30 font-orbitron">PRO</span>
+                              </div>
+                              <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-widest mt-1">Professional Crypto Exchange</p>
+                            </div>
+                          </div>
+
+                          <div className="flex gap-2 flex-wrap">
+                            <div className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-[9px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest">Last Seen: 8 hours ago</div>
+                            <div className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-[9px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest">Joined: 2024-09-29</div>
+                          </div>
                         </div>
-                      ))}
+
+                        {/* Verification */}
+                        <div className="grid grid-cols-2 gap-3 md:gap-4">
+                          {['Email Verified', 'SMS Verified', 'ID Verified', 'Address Verified'].map((item, i) => (
+                            <div key={i} className="bg-black/40 p-3 md:p-4 rounded-xl border border-green-500/20 flex items-center gap-3">
+                              <div className="w-6 h-6 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-500 shrink-0">
+                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                              </div>
+                              <span className="text-[10px] md:text-xs font-black text-gray-300 uppercase tracking-widest">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Performance */}
+                      <div className="space-y-4 md:space-y-6">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="bg-black/40 p-4 md:p-6 rounded-2xl border border-white/5 text-center">
+                            <p className="text-[9px] md:text-[10px] font-black text-gray-600 uppercase tracking-widest mb-1 md:mb-2">All Trades</p>
+                            <p className="text-2xl md:text-3xl font-black text-white font-orbitron"><CountUp end={7735} /></p>
+                          </div>
+                          <div className="bg-black/40 p-4 md:p-6 rounded-2xl border border-white/5 text-center">
+                            <p className="text-[9px] md:text-[10px] font-black text-gray-600 uppercase tracking-widest mb-1 md:mb-2">30-Day Trades</p>
+                            <p className="text-2xl md:text-3xl font-black text-white font-orbitron"><CountUp end={681} /></p>
+                          </div>
+                        </div>
+
+                        <div className="bg-green-500/5 p-6 rounded-2xl border border-green-500/20 text-center relative overflow-hidden flex flex-col items-center justify-center min-h-[120px]">
+                          <div className="absolute top-0 right-0 p-4 opacity-20">
+                            <svg className="w-16 h-16 text-green-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                          </div>
+                          <p className="text-[10px] md:text-xs font-black text-green-500 uppercase tracking-[0.2em] mb-1 md:mb-2 relative z-10">30-Day Completion Rate</p>
+                          <p className="text-4xl md:text-5xl font-black text-white font-orbitron relative z-10"><CountUp end={100} suffix="%" /></p>
+                        </div>
+
+                        <div className="pt-2">
+                          <a
+                            href="https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-white text-black py-4 md:py-5 rounded-2xl font-black font-orbitron tracking-[0.2em] text-[10px] md:text-xs uppercase flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-95 transition-all"
+                          >
+                            <img src="https://bin.bnbstatic.com/static/images/common/favicon.ico" className="w-4 h-4 md:w-5 md:h-5 rounded-md" alt="Binance" />
+                            View Official Binance Profile
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </section>
