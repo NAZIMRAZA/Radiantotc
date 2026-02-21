@@ -7,7 +7,7 @@ import TradeRoom from './components/Trade/TradeRoom';
 import AuthPage from './components/Auth/AuthPage';
 import AdminPanel from './components/Admin/AdminPanel';
 import Logo from './components/Logo';
-import { FAQPage, PolicyPage, AMLPolicyContent, TermsOfServiceContent, PrivacyPolicyContent, RiskDisclosureContent, ChargebackPolicyContent } from './components/LegalPages';
+import { FAQPage, PolicyPage, AMLPolicyContent, TermsOfServiceContent, PrivacyPolicyContent, RiskDisclosureContent, ChargebackPolicyContent, RefundPolicyContent } from './components/LegalPages';
 import { AssetType, TradeSide, P2PAd, TradeStatus, Trade, User, KycStatus } from './types';
 import { APP_CONFIG, MOCK_PRICES } from './constants';
 
@@ -287,6 +287,7 @@ const App: React.FC = () => {
             <Route path="/privacy" element={<PolicyPage title="Privacy Policy" content={<PrivacyPolicyContent />} />} />
             <Route path="/risk" element={<PolicyPage title="Risk Disclosure Statement" content={<RiskDisclosureContent />} />} />
             <Route path="/chargeback" element={<PolicyPage title="Chargeback Policy" content={<ChargebackPolicyContent />} />} />
+            <Route path="/refund" element={<PolicyPage title="Refund Policy" content={<RefundPolicyContent />} />} />
           </Routes>
         </main>
 

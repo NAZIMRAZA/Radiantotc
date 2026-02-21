@@ -914,3 +914,157 @@ export const ChargebackPolicyContent = () => (
     </div>
   </div>
 );
+
+export const RefundPolicyContent = () => (
+  <div className="space-y-10 text-sm md:text-base">
+    <div className="space-y-4">
+      <p className="text-cyan-400 font-bold uppercase text-xs tracking-widest">Last Updated: 10-OCT-2025</p>
+      <p>This Refund & Cancellation Policy applies to all users trading with RadiantvaultOTC, operated by Radiantvault Ventures Private Limited.</p>
+      <p>Cryptocurrency transactions are irreversible. Please read this policy carefully before trading.</p>
+      <p>By using our services, you agree to this policy.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">1. Nature of Crypto Transactions</h3>
+      <p>Cryptocurrency trades executed through RadiantvaultOTC and Binance P2P escrow are final.</p>
+      <p>Once crypto is released to the buyer, the transaction cannot be reversed.</p>
+      <p>Refunds are only possible in limited situations described below.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">2. Order Cancellation Before Payment</h3>
+      <p>A user may cancel an order if:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Payment has not been made</li>
+        <li>Binance order is still open</li>
+        <li>No funds have been received</li>
+      </ul>
+      <p>Repeated cancellations may lead to account restrictions.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">3. Payment Made but Crypto Not Released</h3>
+      <p>If payment is made and crypto has not yet been released:</p>
+      <p>User must:</p>
+      <ol className="list-decimal pl-6 space-y-2 text-gray-400">
+        <li>Contact RadiantvaultOTC support immediately</li>
+        <li>Provide proof of payment</li>
+        <li>Follow Binance dispute process</li>
+      </ol>
+      <p>If payment is confirmed, crypto will be released or payment refunded.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">4. Payment Sent Incorrectly</h3>
+      <p>If user sends payment:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>To wrong account</li>
+        <li>From third-party account</li>
+        <li>Without Binance order</li>
+        <li>Without correct reference</li>
+      </ul>
+      <p>RadiantvaultOTC will try to assist but does not guarantee recovery. Any recovery charges will be borne by the user.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">5. Refunds After Crypto Release</h3>
+      <p>Refunds are NOT allowed after crypto has been released, except in cases of proven technical error caused by RadiantvaultOTC.</p>
+      <p>Price changes or user mistakes are not valid refund reasons.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">6. Chargebacks Are Not Refunds</h3>
+      <p>Initiating bank or UPI chargeback after receiving crypto is considered fraud.</p>
+      <p>Users must follow the Chargeback Agreement and resolve disputes immediately.</p>
+      <p>Legal action may be taken.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">7. Third-Party Payment Restrictions</h3>
+      <p>Payments must be made only from same-name bank account.</p>
+      <p>If third-party payment is used:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Trade may be cancelled</li>
+        <li>Refund may be delayed</li>
+        <li>Funds may be frozen until verification</li>
+      </ul>
+      <p>RadiantvaultOTC is not responsible for bank delays.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">8. Failed or Rejected Transactions</h3>
+      <p>Refunds may be issued if:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Payment fails</li>
+        <li>Duplicate payment received</li>
+        <li>Trade cannot be completed</li>
+      </ul>
+      <p>Refunds will be sent to the original bank account within a reasonable time. Bank charges may be deducted.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">9. Fees & Charges</h3>
+      <p>Refunds may deduct:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Bank charges</li>
+        <li>Payment gateway fees</li>
+        <li>Compliance verification costs</li>
+        <li>Legal processing fees</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">10. Fraud or Suspicious Activity</h3>
+      <p>If fraud is suspected:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Refunds may be withheld</li>
+        <li>Account may be frozen</li>
+        <li>Case may be reported to authorities</li>
+      </ul>
+      <p>Funds may be returned only after investigation.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">11. Processing Time</h3>
+      <p>Refund processing depends on banks and payment networks. Typical time:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>UPI / IMPS: 1–3 working days</li>
+        <li>NEFT / RTGS: 2–5 working days</li>
+      </ul>
+      <p>Delays beyond our control are not our responsibility.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">12. How to Request Refund</h3>
+      <p>Contact:</p>
+      <p>Radiantvault Ventures Private Limited<br />
+        Trade Name: RadiantvaultOTC<br />
+        <span className="text-white font-bold">Email:</span> support@radiantvaultotc.com<br />
+        <span className="text-white font-bold">Phone:</span> 7829193944</p>
+      <p>Provide:</p>
+      <ul className="list-disc pl-6 space-y-2 text-gray-400">
+        <li>Binance Order ID</li>
+        <li>Payment Proof</li>
+        <li>Registered Phone Number</li>
+      </ul>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">13. Policy Updates</h3>
+      <p>RadiantvaultOTC may update this policy anytime. Continued use means acceptance.</p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-black font-orbitron text-white">14. Contact</h3>
+      <p>Radiantvault Ventures Private Limited<br />
+        Trade Name: RadiantvaultOTC</p>
+      <p><span className="text-white font-bold">Email:</span> support@radiantvaultotc.com</p>
+      <p><span className="text-white font-bold">Phone:</span> 7829193944</p>
+      <p><span className="text-white font-bold">Registered Address:</span> V.NO-24/8/1, SLV Temple Road, Mangammanapalya Bangalore-560068, Karnataka</p>
+    </div>
+
+    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+      <p className="text-cyan-400 font-orbitron font-black text-sm tracking-widest uppercase">RadiantvaultOTC – Trusted FIU-Compliant Crypto OTC Trading in India</p>
+    </div>
+  </div>
+);

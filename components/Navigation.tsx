@@ -178,6 +178,16 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               Chargeback Policy
             </Link>
 
+            {/* Refund Policy */}
+            <Link
+              to="/refund"
+              onClick={closeMenu}
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/refund') ? 'text-cyan-400' : 'text-gray-400'
+                }`}
+            >
+              Refund Policy
+            </Link>
+
             {/* Binance Details Item */}
             <button
               onClick={() => { setIsBinancePanelOpen(true); closeMenu(); }}
