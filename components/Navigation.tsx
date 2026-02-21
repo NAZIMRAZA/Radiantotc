@@ -42,7 +42,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
             </div>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8 h-full">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -50,7 +50,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                   className={`${isActive(item.path) || (item.path === '/' && location.hash === '')
                     ? 'text-cyan-400 border-b-2 border-cyan-400'
                     : 'text-gray-400 hover:text-white'
-                    } transition-all duration-300 py-6 text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase`}
+                    } transition-all duration-300 h-full flex items-center text-[10px] lg:text-[11px] xl:text-xs font-black tracking-widest font-orbitron uppercase`}
                 >
                   {item.label}
                 </Link>
@@ -59,7 +59,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               {/* Desktop Compliance Dropdown */}
               <div className="relative group flex items-center h-full">
                 <button
-                  className={`${location.hash.includes('/terms') || location.hash.includes('/risk') || location.hash.includes('/chargeback') || location.hash.includes('/refund') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase gap-1`}
+                  className={`${location.hash.includes('/terms') || location.hash.includes('/risk') || location.hash.includes('/chargeback') || location.hash.includes('/refund') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-[11px] xl:text-xs font-black tracking-widest font-orbitron uppercase gap-1`}
                 >
                   COMPLIANCE
                   <svg className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,7 +79,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               {/* Desktop Help Dropdown */}
               <div className="relative group flex items-center h-full">
                 <button
-                  className={`${location.hash.includes('/faq') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase gap-1`}
+                  className={`${location.hash.includes('/faq') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-[11px] xl:text-xs font-black tracking-widest font-orbitron uppercase gap-1`}
                 >
                   HELP
                   <svg className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -96,7 +96,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               {/* Resources Dropdown Desktop */}
               <div className="relative group flex items-center h-full">
                 <button
-                  className={`${location.hash.includes('/compliance') || location.hash.includes('/fiu-compliance') || location.hash.includes('/cookies') || location.hash.includes('/disclaimer') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase gap-1`}
+                  className={`${location.hash.includes('/compliance') || location.hash.includes('/fiu-compliance') || location.hash.includes('/cookies') || location.hash.includes('/disclaimer') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-[11px] xl:text-xs font-black tracking-widest font-orbitron uppercase gap-1`}
                 >
                   RESOURCES
                   <svg className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -116,7 +116,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               {/* Contact Us Desktop */}
               <Link
                 to="/contact"
-                className={`${isActive('/contact') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 py-6 text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase flex items-center`}
+                className={`${isActive('/contact') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-[11px] xl:text-xs font-black tracking-widest font-orbitron uppercase`}
               >
                 CONTACT US
               </Link>
