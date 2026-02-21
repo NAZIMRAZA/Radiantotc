@@ -12,13 +12,13 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileComplianceOpen, setIsMobileComplianceOpen] = useState(false);
+  const [isMobileHelpOpen, setIsMobileHelpOpen] = useState(false);
   const [isBinancePanelOpen, setIsBinancePanelOpen] = useState(false);
   const location = useLocation();
   const isActive = (path: string) => location.hash === `#${path}`;
 
   const navItems = [
     { label: 'EXCHANGE', path: '/' },
-    { label: 'FAQ', path: '/faq' },
     { label: 'AML & KYC POLICY', path: '/compliance' },
   ];
 
@@ -72,6 +72,23 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                     <Link to="/risk" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">Risk Disclosure Stmt</Link>
                     <Link to="/chargeback" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">Chargeback Policy</Link>
                     <Link to="/refund" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">Refund Policy</Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop Help Dropdown */}
+              <div className="relative group flex items-center h-full">
+                <button
+                  className={`${location.hash.includes('/faq') ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-400 hover:text-white'} transition-all duration-300 h-full flex items-center text-[10px] lg:text-xs font-black tracking-widest font-orbitron uppercase gap-1`}
+                >
+                  HELP
+                  <svg className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className="absolute top-[80%] left-0 w-64 bg-black/95 backdrop-blur-3xl border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+                  <div className="py-2 flex flex-col">
+                    <Link to="/faq" className="px-5 py-3 text-[10px] lg:text-xs font-bold text-gray-400 hover:text-cyan-400 hover:bg-white/5 uppercase tracking-widest transition-colors">FAQs</Link>
                   </div>
                 </div>
               </div>
@@ -172,14 +189,34 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               </div>
             </div>
 
-            {/* Privacy Policy Item */}
+            {/* Help Section */}
+            <div className="space-y-2">
+              <button
+                onClick={() => setIsMobileHelpOpen(!isMobileHelpOpen)}
+                className={`w-full text-left py-3 text-sm font-black font-orbitron tracking-widest uppercase flex justify-between items-center ${isMobileHelpOpen || location.hash.includes('/faq') ? 'text-cyan-400' : 'text-gray-400'
+                  }`}
+              >
+                HELP
+                <svg className={`w-4 h-4 transition-transform duration-300 ${isMobileHelpOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div className={`overflow-hidden transition-all duration-300 ${isMobileHelpOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="pl-4 border-l border-white/10 space-y-2 py-2">
+                  <Link to="/faq" onClick={closeMenu} className={`block py-2 text-[11px] font-bold uppercase tracking-widest ${isActive('/faq') ? 'text-cyan-400' : 'text-gray-500'}`}>FAQs</Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Cookie Policy Item */}
             <Link
-              to="/privacy"
+              to="/cookies"
               onClick={closeMenu}
-              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/privacy') ? 'text-cyan-400' : 'text-gray-400'
+              className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive('/cookies') ? 'text-cyan-400' : 'text-gray-400'
                 }`}
             >
-              Privacy Policy
+              Cookie Policy
             </Link>
 
             {/* Binance Details Item */}

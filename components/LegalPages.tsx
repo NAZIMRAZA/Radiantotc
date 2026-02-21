@@ -444,7 +444,7 @@ export const TermsOfServiceContent = () => (
   </div>
 );
 
-export const PrivacyPolicyContent = () => (
+export const CookiePolicyContent = () => (
   <div className="space-y-10 text-sm md:text-base">
     <div className="space-y-4">
       <h3 className="text-xl font-black font-orbitron text-white">1️⃣ Legal Identity of Data Fiduciary</h3>
