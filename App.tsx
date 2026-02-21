@@ -11,7 +11,7 @@ import { FAQPage, PolicyPage, AMLPolicyContent, TermsOfServiceContent, CookiePol
 import { AssetType, TradeSide, P2PAd, TradeStatus, Trade, User, KycStatus } from './types';
 import { APP_CONFIG, MOCK_PRICES } from './constants';
 import { CountUp } from './components/BinanceDetailsPanel';
-import FeedbackSlider from './components/FeedbackSlider';
+import FeedbackSlider from './components/FeedbackSliderNew';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
