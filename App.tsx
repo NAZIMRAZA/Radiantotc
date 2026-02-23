@@ -388,7 +388,7 @@ const App: React.FC = () => {
             <Route path="/fiu-compliance" element={<PolicyPage title="FIU Compliance" content={<FIUComplianceContent />} />} />
             <Route path="/disclaimer" element={<PolicyPage title="Website Disclaimer" content={<WebsiteDisclaimerContent />} />} />
             <Route path="/contact" element={<PolicyPage title="Contact Us" content={<ContactUsContent />} />} />
-            <Route path="/terms" element={<PolicyPage title="Terms of Service" content={<TermsOfServiceContent />} />} />
+            <Route path="/terms" element={<PolicyPage centerHeading="Terms and Conditions" title="Terms of Service" content={<TermsOfServiceContent />} />} />
             <Route path="/cookies" element={<PolicyPage title="Cookie Policy" content={<CookiePolicyContent />} />} />
             <Route path="/risk" element={<PolicyPage title="Risk Disclosure Statement" content={<RiskDisclosureContent />} />} />
             <Route path="/chargeback" element={<PolicyPage title="Chargeback Policy" content={<ChargebackPolicyContent />} />} />
