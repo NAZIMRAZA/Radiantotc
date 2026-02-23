@@ -384,15 +384,15 @@ const App: React.FC = () => {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/admin" element={<AdminPanel onUpdatePrice={setUsdtPrice} currentPrice={usdtPrice} />} />
             <Route path="/trade-active" element={activeTrade && user ? <TradeRoom trade={activeTrade} isBuyer={true} /> : <Navigate to="/" />} />
-            <Route path="/compliance" element={<PolicyPage title="AML & Compliance" content={<AMLPolicyContent />} />} />
-            <Route path="/fiu-compliance" element={<PolicyPage title="FIU Compliance" content={<FIUComplianceContent />} />} />
-            <Route path="/disclaimer" element={<PolicyPage title="Website Disclaimer" content={<WebsiteDisclaimerContent />} />} />
-            <Route path="/contact" element={<PolicyPage title="Contact Us" content={<ContactUsContent />} />} />
+            <Route path="/compliance" element={<PolicyPage centerHeading="AML & Compliance" title="AML & Compliance" content={<AMLPolicyContent />} />} />
+            <Route path="/fiu-compliance" element={<PolicyPage centerHeading="FIU Compliance" title="FIU Compliance" content={<FIUComplianceContent />} />} />
+            <Route path="/disclaimer" element={<PolicyPage centerHeading="Website Disclaimer" title="Website Disclaimer" content={<WebsiteDisclaimerContent />} />} />
+            <Route path="/contact" element={<PolicyPage centerHeading="Contact Us" title="Contact Us" content={<ContactUsContent />} />} />
             <Route path="/terms" element={<PolicyPage centerHeading="Terms and Conditions" title="Terms of Service" content={<TermsOfServiceContent />} />} />
-            <Route path="/cookies" element={<PolicyPage title="Cookie Policy" content={<CookiePolicyContent />} />} />
-            <Route path="/risk" element={<PolicyPage title="Risk Disclosure Statement" content={<RiskDisclosureContent />} />} />
-            <Route path="/chargeback" element={<PolicyPage title="Chargeback Policy" content={<ChargebackPolicyContent />} />} />
-            <Route path="/refund" element={<PolicyPage title="Refund Policy" content={<RefundPolicyContent />} />} />
+            <Route path="/cookies" element={<PolicyPage centerHeading="Cookie Policy" title="Cookie Policy" content={<CookiePolicyContent />} />} />
+            <Route path="/risk" element={<PolicyPage centerHeading="Risk Disclosure Statement" title="Risk Disclosure Statement" content={<RiskDisclosureContent />} />} />
+            <Route path="/chargeback" element={<PolicyPage centerHeading="Chargeback Policy" title="Chargeback Policy" content={<ChargebackPolicyContent />} />} />
+            <Route path="/refund" element={<PolicyPage centerHeading="Refund Policy" title="Refund Policy" content={<RefundPolicyContent />} />} />
           </Routes>
         </main>
 
