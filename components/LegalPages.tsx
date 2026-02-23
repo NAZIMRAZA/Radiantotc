@@ -6,29 +6,70 @@ export const FAQPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const faqs = [
-    { q: "What is Radiantvault Ventures?", a: "Radiantvault Ventures is a leading peer-to-peer (P2P) cryptocurrency trading platform in India. We provide a secure, transparent, and user-friendly marketplace for individuals to trade digital assets directly with one another. By eliminating intermediaries, we offer faster and more decentralized trading options." },
-    { q: "How do I create an account on Radiantvault Ventures?", a: "Step 1: Click on the Sign Up button. Step 2: Enter email, choice password. Step 3: Verify email. Once verified, log in and proceed to KYC." },
-    { q: "Is KYC mandatory?", a: "Yes, KYC (Know Your Customer) is mandatory for all users on Radiantvault Ventures. We enforce strict KYC rules to ensure compliance with Indian regulations." },
-    { q: "What documents do I need for KYC verification?", a: "Valid government photo ID (Aadhaar/PAN/Passport), Proof of Address, Passport Photo, and a Real-time Selfie." },
-    { q: "How long does KYC verification take?", a: "Usually 24-48 hours after submission. You will be notified via email." },
-    { q: "How do I trade cryptocurrency on Radiantvault Ventures?", a: "Browse offers, choose a buyer/seller, initiate trade, confirm payment, and release crypto via escrow." },
-    { q: "What payment methods are accepted?", a: "Bank transfers (IMPS, NEFT, RTGS), UPI, and popular mobile wallets." },
-    { q: "Is there a minimum or maximum trading limit?", a: "Limits vary by the individual offer. Check offer details before proceeding." },
-    { q: "What are the fees for trading on Radiantvault Ventures?", a: "We charge a small, transparent transaction fee displayed upfront before you confirm." },
-    { q: "Is Radiantvault Ventures secure?", a: "Yes. We use advanced encryption, 2FA, and a secure escrow system for all trades." },
-    { q: "How does the escrow system work?", a: "Crypto is held in a neutral escrow wallet once a trade starts. It's only released to the buyer after both parties confirm the payment." },
-    { q: "What happens if I have a dispute during a trade?", a: "Our support team mediates. Provide evidence (payment proof/chats) and we will resolve based on facts." },
-    { q: "How do I withdraw my cryptocurrency to an external wallet?", a: "Go to Wallet, select crypto, enter destination address and amount, then confirm." },
-    { q: "Can I trade other cryptocurrencies besides Bitcoin?", a: "Yes, we support BTC, ETH, LTC, and USDT, with more assets added regularly." },
-    { q: "Is there a mobile app for Radiantvault Ventures?", a: "Currently in development for Android and iOS. Stay tuned for the release!" },
-    { q: "What happens if I forget my password?", a: "Use the 'Forgot Password' link on the login page to receive a reset link via email." },
-    { q: "Can I delete my Radiantvault Ventures account?", a: "Yes, contact support for assistance. Note that data removal is permanent." },
-    { q: "How can I contact customer support?", a: "Email: radiantvaultventures@gmail.com, or use the Live Chat on our website during business hours." },
-    { q: "Are there any risks in P2P cryptocurrency trading?", a: "Risks exist, but we mitigate them through escrow, KYC, and ratings. Always verify payment receipt before releasing." },
-    { q: "Does Radiantvault Ventures comply with Indian regulations?", a: "Yes, we adhere to all Indian VDA regulations, including FIU-IND compliance and 1% TDS (Sec 194S)." },
-    { q: "Can foreign nationals use Radiantvault Ventures?", a: "Currently available only to Indian residents. International expansion is planned." },
-    { q: "How can I report suspicious activity?", a: "Email security@radiantvault.com immediately with details." },
-    { q: "What is the future of Radiantvault Ventures?", a: "Expanding asset support, launching a mobile app, and entering international markets while remaining Bharat's #1 hub." }
+    { q: "What is RadiantvaultOTC?", a: "RadiantvaultOTC is an OTC crypto trading service operated by Radiantvault Ventures Private Limited, a verified Binance P2P Pro Merchant offering FIU-compliant crypto trading in India." },
+    { q: "How does trading with RadiantvaultOTC work?", a: "1. Register on our website\n2. Complete KYC verification\n3. Place order\n4. Redirect to our Binance P2P ad\n5. Pay via Binance escrow\n6. Crypto released after confirmation" },
+    { q: "Why should I trade with RadiantvaultOTC?", a: "• Verified Binance Pro Merchant\n• FIU-compliant trading\n• Fast execution\n• Multiple payment options\n• Secure escrow through Binance" },
+    { q: "Do you provide investment advice?", a: "No. RadiantvaultOTC does not provide financial or investment advice." },
+
+    // KYC VERIFICATION
+    { q: "Is KYC mandatory?", a: "Yes. We do not trade without full KYC verification." },
+    { q: "What documents are required for KYC?", a: "• Aadhaar Card (Front & Back)\n• PAN Card\n• Selfie holding Aadhaar\n• Liveness verification\n• Active mobile number" },
+    { q: "Why do you need KYC?", a: "To comply with FIU-IND AML rules and prevent fraud, scams, and chargebacks." },
+    { q: "How long does KYC approval take?", a: "Usually within a few hours to 24 hours depending on document clarity." },
+    { q: "Is my KYC data safe?", a: "Yes. We store KYC data encrypted and securely according to Indian IT Act guidelines." },
+
+    // BINANCE TRADING
+    { q: "Why am I redirected to Binance?", a: "All trades are executed through Binance escrow for safety and transparency." },
+    { q: "Can I pay outside Binance?", a: "No. Never send money outside Binance order chat unless officially instructed." },
+    { q: "Do I need a Binance account?", a: "Yes. You must have a verified Binance account to trade with us." },
+    { q: "What if Binance is down?", a: "Trades may be delayed. RadiantvaultOTC is not responsible for Binance platform issues." },
+
+    // PAYMENTS
+    { q: "What payment methods do you accept?", a: "UPI, IMPS, RTGS, NEFT, Bank Transfer." },
+    { q: "Can I pay from someone else’s bank account?", a: "No. Third-party payments are strictly prohibited." },
+    { q: "Why same-name payment is required?", a: "To prevent fraud and comply with AML regulations." },
+    { q: "What happens if I send from wrong account?", a: "Trade may be cancelled and funds may be held until verification." },
+
+    // CHARGEBACK & FRAUD
+    { q: "What is a chargeback?", a: "When a user reverses payment after receiving crypto." },
+    { q: "What happens if I do chargeback?", a: "You must resolve it immediately, provide NOC from LEA, and reimburse all losses and legal costs.\nLegal action may be taken." },
+    { q: "Why such strict chargeback rules?", a: "Because crypto is irreversible and fraud protection is necessary." },
+
+    // FEES
+    { q: "Do you charge fees?", a: "Our trading margin is included in price. Additional legal or bank charges may apply in disputes." },
+    { q: "Are there hidden charges?", a: "No hidden charges. All costs are shown before trade." },
+
+    // REFUNDS
+    { q: "Can I cancel my order?", a: "Yes, before payment is made." },
+    { q: "Can I get refund after crypto is released?", a: "No. Crypto transactions are final." },
+    { q: "What if I paid but didn’t get crypto?", a: "Contact support immediately with proof of payment." },
+
+    // TAXES
+    { q: "Do I have to pay crypto tax in India?", a: "Yes. Crypto gains may be taxed at 30% and 1% TDS may apply. Consult your CA." },
+    { q: "Do you deduct TDS?", a: "Depends on regulations and trade structure. Users are responsible for tax compliance." },
+
+    // SECURITY
+    { q: "How do you protect users?", a: "• SSL encryption\n• OTP login\n• Fraud monitoring\n• Secure servers\n• Binance escrow" },
+    { q: "Can my account be hacked?", a: "Use strong password and 2FA. Never share OTP." },
+    { q: "Do you store crypto?", a: "No. Crypto is handled through Binance escrow." },
+
+    // COMPLIANCE
+    { q: "Are you FIU compliant?", a: "Yes. Radiantvault Ventures Private Limited follows FIU-IND AML rules." },
+    { q: "Do you report suspicious transactions?", a: "Yes, when legally required." },
+    { q: "Can you reject my trade?", a: "Yes, if suspicious activity is detected." },
+
+    // ACCOUNT
+    { q: "Can my account be banned?", a: "Yes, for fake KYC, fraud, abuse, or chargebacks." },
+    { q: "Can I delete my account?", a: "Yes, subject to legal record-keeping requirements." },
+
+    // SUPPORT
+    { q: "How do I contact RadiantvaultOTC?", a: "Email: support@radiantvaultotc.com\nPhone: [Insert Number]" },
+    { q: "What are support hours?", a: "24×7 trading support." },
+
+    // LEGAL
+    { q: "What laws apply?", a: "All disputes are subject to courts in Karnataka, India." },
+    { q: "Do you share my data?", a: "Only with banks, Binance, FIU-IND, or law enforcement when legally required." },
+    { q: "Where can I read your policies?", a: "Check footer links for Terms, Privacy Policy, AML Policy, Risk Disclosure, etc." }
   ];
 
   const filteredFaqs = faqs.filter(f =>
@@ -61,7 +102,7 @@ export const FAQPage: React.FC = () => {
               <span className="font-bold text-gray-200 text-sm md:text-base pr-8">{faq.q}</span>
               <span className="text-cyan-400 transform group-open:rotate-180 transition-transform font-bold">↓</span>
             </summary>
-            <div className="p-6 pt-0 text-gray-400 text-sm leading-relaxed font-medium border-t border-white/5 bg-black/20">
+            <div className="p-6 pt-0 text-gray-400 text-sm leading-relaxed font-medium border-t border-white/5 bg-black/20 whitespace-pre-line">
               {faq.a}
             </div>
           </details>
