@@ -12,6 +12,7 @@ import { AssetType, TradeSide, P2PAd, TradeStatus, Trade, User, KycStatus } from
 import { APP_CONFIG, MOCK_PRICES } from './constants';
 import { CountUp } from './components/BinanceDetailsPanel';
 import FeedbackSlider from './components/FeedbackSliderNew';
+import DesktopFeedbackSlider from './components/DesktopFeedbackSlider';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -370,32 +371,9 @@ const App: React.FC = () => {
                       <FeedbackSlider />
                     </div>
 
-                    {/* Desktop Grid */}
-                    <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                      {[
-                        { name: "Aarav M.", location: "Mumbai, MH", text: "Fastest UPI settlement I've experienced. Node released USDT in 4 mins.", rating: 5 },
-                        { name: "Deepika K.", location: "Bangalore, KA", text: "FIU registration is the main reason I moved my volume here.", rating: 5 },
-                        { name: "Vikram J.", location: "Pune, MH", text: "Competitive spreads. Direct INR pipeline that actually works.", rating: 5 }
-                      ].map((review, i) => (
-                        <div key={i} className="glass-card p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between group">
-                          <div className="space-y-4">
-                            <div className="flex justify-between items-start">
-                              <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center font-black font-orbitron text-cyan-400">
-                                  {review.name[0]}
-                                </div>
-                                <div>
-                                  <p className="text-[11px] md:text-sm font-black text-white font-orbitron">{review.name}</p>
-                                  <p className="text-[8px] md:text-[10px] text-gray-600 font-bold uppercase">{review.location}</p>
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-[11px] md:text-sm text-gray-500 font-medium leading-relaxed italic">
-                              "{review.text}"
-                            </p>
-                          </div>
-                        </div>
-                      ))}
+                    {/* Desktop Slider */}
+                    <div className="hidden md:block w-full">
+                      <DesktopFeedbackSlider />
                     </div>
                   </div>
                 </section>
@@ -467,7 +445,10 @@ const BottomLayout: React.FC = () => {
                 <Logo className="h-8 w-8 md:h-10 md:w-10" />
                 <span className="text-base md:text-xl font-black font-orbitron tracking-tighter">RadiantvaultOTC</span>
               </div>
-              <p className="text-xs md:text-sm text-gray-600 font-medium">Enterprise infrastructure for the Bharat digital economy.</p>
+              <div className="text-[10px] md:text-sm text-gray-400 font-medium space-y-3">
+                <p>RadiantvaultOTC is operated by Radiantvault Ventures Private Limited, a professional OTC crypto trading desk and verified Binance P2P Pro Merchant serving customers across India.</p>
+                <p>We provide FIU-compliant crypto trading services through Binance escrow with strict AML, KYC, and fraud-prevention policies.</p>
+              </div>
               <div className="space-y-2">
                 <h4 className="text-[10px] font-black font-orbitron tracking-widest text-white uppercase">HQ</h4>
                 <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed font-bold uppercase">Bangalore 560068, Karnataka, India</p>
