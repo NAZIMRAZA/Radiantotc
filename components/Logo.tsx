@@ -13,7 +13,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12" }) => {
 
       {/* User provided custom logo */}
       <img
-        src="/images/logo.jpeg"
+        src="/images/logo.png"
         alt="RadiantVault Logo"
         className="w-full h-full object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"
       />
