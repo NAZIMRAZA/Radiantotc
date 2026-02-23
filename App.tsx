@@ -264,7 +264,7 @@ const App: React.FC = () => {
                 {/* 3.5. GLOBAL REACH GIF SECTION */}
                 <section className="max-w-7xl mx-auto px-4 w-full h-full flex justify-center items-center overflow-hidden rounded-3xl md:rounded-[4rem] group relative">
                   <div className="absolute inset-0 bg-cyan-500/20 mix-blend-overlay group-hover:bg-cyan-500/10 transition-colors z-10 pointer-events-none rounded-[inherit]"></div>
-                  <img src="/images/World.gif" alt="Global Reach" className="w-full h-auto object-cover rounded-[inherit] opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <img src="/images/World2.gif" alt="Global Reach" className="w-full h-auto object-cover rounded-[inherit] opacity-80 group-hover:opacity-100 transition-opacity" />
                 </section>
 
                 {/* 4. FIU COMPLIANCE SECTION */}
