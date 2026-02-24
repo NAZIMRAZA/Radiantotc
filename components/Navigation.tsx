@@ -32,10 +32,10 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
           <div className="flex justify-between h-16 md:h-20 items-center">
             {/* Logo Section */}
             <div className="flex items-center space-x-2 shrink-0">
-              <Link to="/" onClick={closeMenu} className="flex items-center space-x-2 md:space-x-3 group">
+              <Link to="/" onClick={() => { if (location.pathname === '/') window.location.reload(); else closeMenu(); }} className="flex items-center space-x-2 md:space-x-3 group">
                 <Logo className="h-9 w-9 md:h-12 md:w-12" />
                 <div className="flex flex-col">
-                  <span className="text-lg md:text-2xl font-black text-white leading-none tracking-tighter font-orbitron">RADIANTVAULT</span>
+                  <span className="text-lg md:text-2xl font-black text-white leading-none tracking-tighter font-orbitron">RadiantvaultOTC</span>
                   <span className="text-[7px] md:text-[9px] font-bold text-cyan-400 uppercase tracking-[0.2em] md:tracking-[0.3em] leading-none mt-1">VENTURES OTC</span>
                 </div>
               </Link>
@@ -47,6 +47,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
                 <Link
                   key={item.path}
                   to={item.path}
+                  onClick={() => { if (location.pathname === item.path) window.location.reload(); }}
                   className={`${isActive(item.path) || (item.path === '/' && location.hash === '')
                     ? 'text-cyan-400 border-b-2 border-cyan-400'
                     : 'text-gray-400 hover:text-white'
@@ -184,7 +185,7 @@ const Navigation: React.FC<NavigationProps> = ({ user, onLogout }) => {
               <Link
                 key={item.path}
                 to={item.path}
-                onClick={closeMenu}
+                onClick={() => { if (location.pathname === item.path) window.location.reload(); else closeMenu(); }}
                 className={`block py-3 text-sm font-black font-orbitron tracking-widest uppercase ${isActive(item.path) || (item.path === '/' && location.hash === '') ? 'text-cyan-400' : 'text-gray-400'
                   }`}
               >

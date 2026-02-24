@@ -114,7 +114,7 @@ const App: React.FC = () => {
                         INDIA'S TRUSTED P2P HUB
                       </div>
                       <h1 className="text-4xl md:text-8xl font-black font-orbitron leading-[1] md:leading-[0.9] tracking-tighter">
-                        RADIANTVAULT <br />
+                        RadiantvaultOTC <br />
                         <span className="gradient-text">VENTURES</span>
                       </h1>
                       <p className="text-sm md:text-xl text-gray-400 font-medium max-w-xl leading-relaxed">
@@ -362,7 +362,7 @@ const App: React.FC = () => {
                 <section className="max-w-7xl mx-auto px-4 w-full">
                   <div className="space-y-10 md:space-y-16">
                     <div className="text-center space-y-2">
-                      <h2 className="text-2xl md:text-5xl font-black font-orbitron tracking-tighter uppercase">Transmission Log</h2>
+                      <h2 className="text-2xl md:text-5xl font-black font-orbitron tracking-tighter uppercase">What Our Users Say?</h2>
                       <p className="text-cyan-400 font-black uppercase tracking-[0.2em] text-[8px] md:text-[10px]">Verified Network Feedback</p>
                     </div>
 
@@ -415,11 +415,11 @@ const BottomLayout: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               <h2 className="text-[16px] sm:text-2xl md:text-3xl lg:text-4xl font-black font-orbitron tracking-tighter uppercase relative transition-transform duration-500 group-hover:scale-105">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white drop-shadow-[0_0_10px_rgba(34,211,238,0.6)] group-hover:from-cyan-300 group-hover:via-white group-hover:to-cyan-300 transition-all duration-500">
-                  Are You Ready For Swift {' '}
+                  Are You Ready For Swift{' '}
                 </span>
                 <br className="md:hidden" />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)] transition-all duration-500 animate-pulse">
-                  Your Trading Experience
+                  Trading Experience?
                 </span>
               </h2>
             </div>
@@ -462,7 +462,7 @@ const BottomLayout: React.FC = () => {
               <div>
                 <h4 className="text-[10px] md:text-xs font-black font-orbitron tracking-widest text-white mb-4 md:mb-6 uppercase">Platform</h4>
                 <ul className="space-y-3 text-[10px] md:text-sm text-gray-600 font-bold uppercase tracking-wider">
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/" className="hover:text-cyan-400 transition-colors">Exchange</Link></li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/" onClick={() => { if (location.pathname === '/') window.location.reload(); }} className="hover:text-cyan-400 transition-colors">Exchange</Link></li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/faq" className="hover:text-cyan-400 transition-colors">Help / FAQs</Link></li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-cyan-500 rounded-full shrink-0"></span><Link to="/contact" className="hover:text-cyan-400 transition-colors">Contact Us</Link></li>
                 </ul>
@@ -491,7 +491,7 @@ const BottomLayout: React.FC = () => {
             <div className="inline-block glass-card px-6 py-4 md:px-8 md:py-6 rounded-2xl md:rounded-[2rem] border-cyan-500/20 max-w-4xl w-full">
               <p className="text-[9px] md:text-sm font-bold text-gray-400 leading-relaxed">
                 <span className="text-cyan-400 font-orbitron font-black text-[10px] block mb-1 tracking-widest">OFFICIAL DECLARATION</span>
-                <span className="text-white">{APP_CONFIG.LEGAL_NAME}</span> is FIU-IND registered: <span className="text-cyan-400">{APP_CONFIG.FIU_REG_ID}</span>
+                <span className="text-white">RadiantVaultOTC&copy;2026,</span> is FIU-IND registered: <span className="text-cyan-400">{APP_CONFIG.FIU_REG_ID}</span>
               </p>
             </div>
           </div>
