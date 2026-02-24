@@ -65,10 +65,11 @@ const KycForm: React.FC = () => {
     if (videoRef.current && canvasRef.current) {
       const context = canvasRef.current.getContext('2d');
       if (context) {
-        canvasRef.current.width = videoRef.current.videoWidth;
-        canvasRef.current.height = videoRef.current.videoHeight;
-        context.drawImage(videoRef.current, 0, 0);
-        const data = canvasRef.current.toDataURL('image/png');
+        canvasRef.current.width = 400;
+        canvasRef.current.height = (400 * videoRef.current.videoHeight) / videoRef.current.videoWidth;
+        context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
+        // Compress the image aggressively to avoid Firestore size limits blocking it
+        const data = canvasRef.current.toDataURL('image/jpeg', 0.5);
         setSelfie(data);
         stopCamera();
       }
@@ -83,7 +84,7 @@ const KycForm: React.FC = () => {
 
       const submissionData = {
         ...formData,
-        selfie: selfie ? true : false,
+        selfie: selfie || '', // Store the compressed base64 image or empty string
         id: userId,
         userId: userId,
         status: 'PENDING',
