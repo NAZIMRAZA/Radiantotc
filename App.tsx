@@ -453,9 +453,7 @@ const BottomLayout: React.FC = () => {
                 <h4 className="text-[10px] font-black font-orbitron tracking-widest text-white uppercase">HQ</h4>
                 <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed font-bold uppercase">Bangalore 560068, Karnataka, India</p>
               </div>
-              <Link to="/admin" className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full w-fit mt-4 hover:border-cyan-500/50 hover:bg-white/10 transition-colors">
-                <span className="text-[8px] md:text-[10px] font-black font-orbitron tracking-widest text-cyan-400 uppercase">PROD NODE READY</span>
-              </Link>
+
             </div>
 
             <div className="lg:w-3/5 grid grid-cols-3 gap-4 sm:gap-8">
