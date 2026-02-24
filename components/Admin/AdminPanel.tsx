@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase';
 
 interface AdminPanelProps {
   onUpdatePrice?: (price: number) => void;
@@ -20,26 +18,15 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onUpdatePrice, currentPrice = 9
     setIsDownloading(true);
     try {
       let querySnapshot: any = [];
-      try {
-        const snap = await getDocs(collection(db, 'kycSubmissions'));
-        snap.forEach(d => querySnapshot.push({ id: d.id, ...d.data() }));
-      } catch (fbErr) {
-        console.warn("Firestore fetch failed, relying only on local storage.");
-      }
 
-      // Merge with local storage
+      // Exclusively Pull from local storage
       const localStr = localStorage.getItem('localKycSubmissions');
       if (localStr) {
-        const localData = JSON.parse(localStr);
-        localData.forEach((ld: any) => {
-          if (!querySnapshot.find((q: any) => q.id === ld.id)) {
-            querySnapshot.push(ld);
-          }
-        });
+        querySnapshot = JSON.parse(localStr);
       }
 
       if (querySnapshot.length === 0) {
-        alert("No KYC submissions found to download.");
+        alert("No KYC submissions found locally.");
         setIsDownloading(false);
         return;
       }
@@ -51,9 +38,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onUpdatePrice, currentPrice = 9
       querySnapshot.forEach((data: any) => {
         let date = 'N/A';
         if (data.submittedAt) {
-          date = typeof data.submittedAt === 'number'
-            ? new Date(data.submittedAt).toLocaleString()
-            : new Date(data.submittedAt.toMillis()).toLocaleString();
+          date = new Date(data.submittedAt).toLocaleString();
         }
 
         rows.push([

@@ -1,6 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { auth, db } from '../../firebase';
 
 const KycForm: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -22,27 +20,15 @@ const KycForm: React.FC = () => {
 
   useEffect(() => {
     const checkKyc = async () => {
-      const user = auth.currentUser;
-      if (user) {
-        try {
-          const docRef = doc(db, 'kycSubmissions', user.uid);
-          const docSnap = await getDoc(docRef);
-          if (docSnap.exists()) {
-            window.location.href = "https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec";
-            return;
-          }
-        } catch (error) {
-          console.error("Firestore check failed, checking local storage:", error);
-        }
-
-        // Also check LocalStorage
-        const localData = localStorage.getItem('localKycSubmissions');
-        if (localData) {
-          const parsed = JSON.parse(localData);
-          if (parsed.find((p: any) => p.userId === user.uid)) {
-            window.location.href = "https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec";
-            return;
-          }
+      // Rely solely on LocalStorage
+      const localData = localStorage.getItem('localKycSubmissions');
+      if (localData) {
+        const parsed = JSON.parse(localData);
+        // Assuming we look up by a dummy ID or just check if ANY submitted since no auth
+        // if one exists we redirect them
+        if (parsed.length > 0) {
+          window.location.href = "https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec";
+          return;
         }
       }
       setLoadingInitial(false);
@@ -83,37 +69,23 @@ const KycForm: React.FC = () => {
   };
 
   const handleSubmit = async () => {
-    const user = auth.currentUser;
-    if (!user) {
-      alert("Please login first");
-      return;
-    }
-
     setIsSubmitting(true);
     try {
+      const generatedId = `user_${Math.floor(Math.random() * 1000000)}`;
       const submissionData = {
         ...formData,
         selfie: selfie ? true : false,
-        userId: user.uid,
+        id: generatedId,
+        userId: generatedId,
         status: 'PENDING',
         submittedAt: Date.now()
       };
 
-      // Always save to LocalStorage to ensure Admin Panel can download it even if Firebase rules block it
+      // Exclusively save to LocalStorage 
       const existingStr = localStorage.getItem('localKycSubmissions');
       const existing = existingStr ? JSON.parse(existingStr) : [];
-      existing.push({ ...submissionData, id: user.uid });
+      existing.push(submissionData);
       localStorage.setItem('localKycSubmissions', JSON.stringify(existing));
-
-      // Attempt to save to Firestore
-      try {
-        await setDoc(doc(db, 'kycSubmissions', user.uid), {
-          ...submissionData,
-          submittedAt: serverTimestamp()
-        });
-      } catch (fbError) {
-        console.warn("Firestore save failed (likely security rules). Saved locally instead.");
-      }
 
       window.location.href = "https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec";
     } catch (error) {
