@@ -106,7 +106,7 @@ const KycForm: React.FC = () => {
     );
   }
 
-  const isPhase1Valid = formData.name && formData.dob && formData.gender && /^\+91\d{10}$/.test(formData.phone) && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) && formData.address;
+  const isPhase1Valid = formData.name && formData.dob && formData.gender && formData.phone.length === 13 && formData.email.includes('@') && formData.address;
 
   return (
     <div className="w-full max-w-full overflow-x-hidden py-10 md:py-24 px-4 flex justify-center">
@@ -157,8 +157,11 @@ const KycForm: React.FC = () => {
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-5 md:py-4 text-white text-sm font-bold outline-none focus:border-cyan-500"
                 value={formData.phone}
                 onChange={(e) => {
-                  let val = e.target.value;
-                  if (!val.startsWith('+91')) val = '+91' + val.replace(/^\+91/, '');
+                  let val = e.target.value.replace(/[^\d+]/g, '');
+                  if (!val.startsWith('+91')) {
+                    val = '+91' + val.replace(/^\+?9?1?/, '');
+                  }
+                  if (val.length > 13) val = val.slice(0, 13);
                   setFormData({ ...formData, phone: val });
                 }}
               />
