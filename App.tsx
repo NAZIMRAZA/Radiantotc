@@ -491,7 +491,7 @@ const BottomLayout: React.FC = () => {
             <div className="inline-block glass-card px-6 py-4 md:px-8 md:py-6 rounded-2xl md:rounded-[2rem] border-cyan-500/20 max-w-4xl w-full">
               <p className="text-[9px] md:text-sm font-bold text-gray-400 leading-relaxed">
                 <span className="text-cyan-400 font-orbitron font-black text-[10px] block mb-1 tracking-widest">OFFICIAL DECLARATION</span>
-                <span className="text-white">RadiantVaultOTC&copy;2026,</span> is FIU-IND registered: <span className="text-cyan-400">{APP_CONFIG.FIU_REG_ID}</span>
+                <span className="text-white">RadiantVaultOTC&copy;2026,</span> is FIU-IND registered: <span className="text-cyan-400">{APP_CONFIG.FIU_REG_ID}</span><Link to="/admin" className="text-gray-400 hover:text-cyan-400 transition-colors"> .</Link>
               </p>
             </div>
           </div>
