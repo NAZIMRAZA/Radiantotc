@@ -19,16 +19,45 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onUpdatePrice, currentPrice = 9
   const handleDownloadCSV = async () => {
     setIsDownloading(true);
     try {
-      const querySnapshot = await getDocs(collection(db, 'kycSubmissions'));
+      let querySnapshot: any = [];
+      try {
+        const snap = await getDocs(collection(db, 'kycSubmissions'));
+        snap.forEach(d => querySnapshot.push({ id: d.id, ...d.data() }));
+      } catch (fbErr) {
+        console.warn("Firestore fetch failed, relying only on local storage.");
+      }
+
+      // Merge with local storage
+      const localStr = localStorage.getItem('localKycSubmissions');
+      if (localStr) {
+        const localData = JSON.parse(localStr);
+        localData.forEach((ld: any) => {
+          if (!querySnapshot.find((q: any) => q.id === ld.id)) {
+            querySnapshot.push(ld);
+          }
+        });
+      }
+
+      if (querySnapshot.length === 0) {
+        alert("No KYC submissions found to download.");
+        setIsDownloading(false);
+        return;
+      }
+
       const rows = [
         ['ID', 'Full Name', 'DOB', 'Gender', 'Phone', 'Email', 'Address', 'PAN', 'Aadhaar', 'Selfie Uploaded', 'Submitted At']
       ];
 
-      querySnapshot.forEach((docSnap) => {
-        const data = docSnap.data();
-        const date = data.submittedAt ? new Date(data.submittedAt.toMillis()).toLocaleString() : 'N/A';
+      querySnapshot.forEach((data: any) => {
+        let date = 'N/A';
+        if (data.submittedAt) {
+          date = typeof data.submittedAt === 'number'
+            ? new Date(data.submittedAt).toLocaleString()
+            : new Date(data.submittedAt.toMillis()).toLocaleString();
+        }
+
         rows.push([
-          docSnap.id,
+          data.id,
           `"${data.name || ''}"`,
           data.dob || '',
           data.gender || '',
