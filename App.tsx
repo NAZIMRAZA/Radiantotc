@@ -410,8 +410,10 @@ const BottomLayout: React.FC = () => {
     <>
       <section className="max-w-7xl mx-auto px-4 mb-16 md:mb-24 w-full">
         {location.pathname === '/' && (
-          <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12">
-            <div className="text-center relative flex justify-center group cursor-default">
+          <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12 glass-card p-10 md:p-16 rounded-[2rem] md:rounded-[4rem] border-cyan-500/20 bg-gradient-to-b from-cyan-500/5 to-transparent relative overflow-hidden group/box hover:border-cyan-500/40 transition-colors duration-500">
+            <div className="absolute inset-0 bg-cyan-500/10 opacity-0 group-hover/box:opacity-100 transition-opacity duration-700 blur-3xl pointer-events-none"></div>
+
+            <div className="text-center relative flex justify-center group cursor-default z-10">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               <h2 className="text-[16px] sm:text-2xl md:text-3xl lg:text-4xl font-black font-orbitron tracking-tighter uppercase relative transition-transform duration-500 group-hover:scale-105">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white drop-shadow-[0_0_10px_rgba(34,211,238,0.6)] group-hover:from-cyan-300 group-hover:via-white group-hover:to-cyan-300 transition-all duration-500">
@@ -428,7 +430,7 @@ const BottomLayout: React.FC = () => {
               href="https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#FCD535] text-black px-8 py-4 md:px-12 md:py-5 rounded-2xl font-black font-orbitron uppercase text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(252,213,53,0.3)] hover:shadow-[0_0_40px_rgba(252,213,53,0.6)] active:scale-95"
+              className="inline-flex items-center gap-3 bg-[#FCD535] text-black px-8 py-4 md:px-12 md:py-5 rounded-2xl font-black font-orbitron uppercase text-xs md:text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(252,213,53,0.3)] hover:shadow-[0_0_40px_rgba(252,213,53,0.6)] active:scale-95 z-10"
             >
               <img src="https://bin.bnbstatic.com/static/images/common/favicon.ico" className="w-5 h-5 md:w-6 md:h-6 rounded-md" alt="Binance" />
               Trade on Binance
