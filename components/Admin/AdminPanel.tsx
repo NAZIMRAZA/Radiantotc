@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 interface AdminPanelProps {
   onUpdatePrice?: (price: number) => void;
@@ -19,14 +21,18 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onUpdatePrice, currentPrice = 9
     try {
       let querySnapshot: any = [];
 
-      // Exclusively Pull from local storage
-      const localStr = localStorage.getItem('localKycSubmissions');
-      if (localStr) {
-        querySnapshot = JSON.parse(localStr);
+      try {
+        const snap = await getDocs(collection(db, 'kycSubmissions'));
+        snap.forEach(d => querySnapshot.push({ id: d.id, ...d.data() }));
+      } catch (fbErr: any) {
+        console.error("Firestore fetch failed:", fbErr);
+        alert("FIREBASE BLOCKED READING DATA!\n\nYou must go to Firebase Console -> Firestore Database -> Rules -> Change to:\nallow read, write: if true;");
+        setIsDownloading(false);
+        return;
       }
 
       if (querySnapshot.length === 0) {
-        alert("No KYC submissions found locally.");
+        alert("No KYC submissions found in Cloud Database.");
         setIsDownloading(false);
         return;
       }
@@ -38,7 +44,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onUpdatePrice, currentPrice = 9
       querySnapshot.forEach((data: any) => {
         let date = 'N/A';
         if (data.submittedAt) {
-          date = new Date(data.submittedAt).toLocaleString();
+          date = typeof data.submittedAt === 'number'
+            ? new Date(data.submittedAt).toLocaleString()
+            : new Date(data.submittedAt.toMillis()).toLocaleString();
         }
 
         rows.push([
