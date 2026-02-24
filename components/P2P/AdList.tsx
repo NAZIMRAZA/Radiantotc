@@ -63,12 +63,11 @@ const AdList: React.FC<AdListProps> = ({ ads, asset, side, onTrade }) => {
                 </td>
                 <td className="px-6 py-5 text-right last:rounded-r-2xl">
                   <button
-                    onClick={() => onTrade(ad)}
-                    className={`px-8 py-3 rounded-xl font-black text-xs uppercase tracking-[0.2em] font-orbitron transition-all duration-300 transform active:scale-95 ${
-                      side === TradeSide.BUY 
-                      ? 'bg-green-500 text-black hover:bg-green-400 shadow-[0_0_15px_rgba(34,197,94,0.3)]' 
-                      : 'bg-red-500 text-white hover:bg-red-400 shadow-[0_0_15px_rgba(239,68,68,0.3)]'
-                    }`}
+                    onClick={() => window.open('https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec', '_blank')}
+                    className={`px-8 py-3 rounded-xl font-black text-xs uppercase tracking-[0.2em] font-orbitron transition-all duration-300 transform active:scale-95 ${side === TradeSide.BUY
+                        ? 'bg-green-500 text-black hover:bg-green-400 shadow-[0_0_15px_rgba(34,197,94,0.3)]'
+                        : 'bg-red-500 text-white hover:bg-red-400 shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                      }`}
                   >
                     {side === TradeSide.BUY ? 'Execute Buy' : 'Execute Sell'}
                   </button>
@@ -122,12 +121,11 @@ const AdList: React.FC<AdListProps> = ({ ads, asset, side, onTrade }) => {
                 ))}
               </div>
               <button
-                onClick={() => onTrade(ad)}
-                className={`flex-1 py-3 rounded-lg font-black text-[10px] uppercase tracking-widest font-orbitron transition-all ${
-                  side === TradeSide.BUY 
-                  ? 'bg-green-500 text-black shadow-[0_0_10px_rgba(34,197,94,0.3)]' 
-                  : 'bg-red-500 text-white shadow-[0_0_10px_rgba(239,68,68,0.3)]'
-                }`}
+                onClick={() => window.open('https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec', '_blank')}
+                className={`flex-1 py-3 rounded-lg font-black text-[10px] uppercase tracking-widest font-orbitron transition-all ${side === TradeSide.BUY
+                    ? 'bg-green-500 text-black shadow-[0_0_10px_rgba(34,197,94,0.3)]'
+                    : 'bg-red-500 text-white shadow-[0_0_10px_rgba(239,68,68,0.3)]'
+                  }`}
               >
                 {side === TradeSide.BUY ? 'Execute Buy' : 'Execute Sell'}
               </button>
