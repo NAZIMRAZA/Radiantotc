@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db } from '../../firebase';
+import { APP_CONFIG } from '../../constants';
 
 const KycForm: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -24,18 +25,20 @@ const KycForm: React.FC = () => {
     const checkKyc = async () => {
       const user = auth.currentUser;
       if (user) {
+        if (!APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL || APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL.includes('YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL')) {
+          console.log("Google Sheet Database not configured yet.");
+          setLoadingInitial(false);
+          return;
+        }
         try {
-          const docRef = doc(db, 'kycSubmissions', user.uid);
-          const docSnap = await getDoc(docRef);
-          if (docSnap.exists()) {
+          const res = await fetch(`${APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL}?action=CHECK_KYC&userId=${user.uid}`);
+          const data = await res.json();
+          if (data && data.exists) {
             window.location.href = "https://c2c.binance.com/en/advertiserDetail?advertiserNo=sde741e95d96635af90ff0d0579e252ec";
             return;
           }
         } catch (error: any) {
-          console.error("Firestore check failed:", error);
-          if (error.code === 'permission-denied') {
-            console.warn("Permission denied. Missing Firebase Security Rules.");
-          }
+          console.error("Google Sheet KYC check failed:", error);
         }
       }
       setLoadingInitial(false);
@@ -78,26 +81,38 @@ const KycForm: React.FC = () => {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
+
+    if (!APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL || APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL.includes('YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL')) {
+      alert("Google Sheet Database is not set up! Please read google-sheet-backend-guide.md to configure.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const user = auth.currentUser;
       const userId = user ? user.uid : `user_${Math.floor(Math.random() * 1000000)}`;
 
       const submissionData = {
+        action: "SUBMIT_KYC",
         ...formData,
-        selfie: selfie || '', // Store the compressed base64 image or empty string
         id: userId,
-        userId: userId,
-        status: 'PENDING',
+        selfie: selfie || '' // Store the compressed base64 image or empty string
       };
 
       try {
-        await setDoc(doc(db, 'kycSubmissions', userId), {
-          ...submissionData,
-          submittedAt: serverTimestamp()
+        const res = await fetch(APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL, {
+          method: 'POST',
+          body: JSON.stringify(submissionData)
         });
+        const data = await res.json();
+        if (data.result !== 'success') {
+          alert("Database Error: " + data.error);
+          setIsSubmitting(false);
+          return;
+        }
       } catch (fbError: any) {
-        console.error("Firebase Error:", fbError);
-        alert(`FIREBASE BLOCKED SAVE! \nYou must go to Firebase Console -> Firestore Database -> Rules -> Change to:\nallow read, write: if true;`);
+        console.error("Fetch Error:", fbError);
+        alert(`Network Error: Check console or setup.`);
         setIsSubmitting(false);
         return;
       }

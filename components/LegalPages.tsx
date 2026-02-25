@@ -115,7 +115,7 @@ export const FAQPage: React.FC = () => {
   );
 };
 
-export const PolicyPage: React.FC<{ title: string; centerHeading?: string; content: React.ReactNode }> = ({ title, centerHeading, content }) => (
+export const PolicyPage: React.FC<{ title?: string; centerHeading?: string; content: React.ReactNode }> = ({ title, centerHeading, content }) => (
   <div className="max-w-4xl mx-auto py-24 px-4">
     {centerHeading && (
       <div className="text-center mb-16">
@@ -123,7 +123,7 @@ export const PolicyPage: React.FC<{ title: string; centerHeading?: string; conte
       </div>
     )}
     <div className="glass-card p-10 md:p-16 rounded-[3rem] border-white/5">
-      <h2 className="text-3xl font-black font-orbitron mb-12 text-white uppercase tracking-tighter">{title}</h2>
+      {title && <h2 className="text-3xl font-black font-orbitron mb-12 text-white uppercase tracking-tighter">{title}</h2>}
       <div className="text-gray-400 leading-relaxed font-medium">
         {content}
       </div>

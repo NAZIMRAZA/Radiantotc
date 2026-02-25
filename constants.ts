@@ -8,7 +8,8 @@ export const APP_CONFIG = {
   SUPPORT_EMAIL: 'radiantvaultventures@gmail.com',
   SUPPORT_PHONES: ['7892193944', '7892021103'],
   OFFICE_ADDRESS: 'Bangalore 560068, Karnataka, India',
-  FIU_REG_ID: 'REID-VA00058829'
+  FIU_REG_ID: 'REID-VA00058829',
+  GOOGLE_SHEET_WEB_APP_URL: 'https://script.google.com/macros/s/AKfycbwuUjDdHys7WnaTi4u64BKRq9cgR2eEYcMI5onxAy7RwwoQvEr53M4egevHiVQK0bDn/exec' // Refer to google-sheet-backend-guide.md
 };
 
 export const MOCK_PAYMENT_METHODS = ['UPI', 'IMPS', 'NEFT', 'RTGS'];

@@ -33,6 +33,29 @@ const App: React.FC = () => {
     return saved ? parseFloat(saved) : MOCK_PRICES.USDT;
   });
 
+  useEffect(() => {
+    const fetchLiveRate = async () => {
+      try {
+        if (!APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL || APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL.includes('YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL')) return;
+        const res = await fetch(`${APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL}?action=GET_RATE`);
+        const data = await res.json();
+        if (data && data.rate) {
+          const liveRate = parseFloat(data.rate);
+          if (!isNaN(liveRate)) {
+            setUsdtPrice(liveRate);
+            localStorage.setItem('PLATFORM_USDT_PRICE', liveRate.toString());
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch live rate from Google Spreadsheet:", err);
+      }
+    };
+
+    fetchLiveRate();
+    const interval = setInterval(fetchLiveRate, 60000); // sync every minute
+    return () => clearInterval(interval);
+  }, []);
+
   const [ads, setAds] = useState<P2PAd[]>([
     {
       id: 'ad_1',
@@ -384,15 +407,15 @@ const App: React.FC = () => {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/admin" element={<AdminPanel onUpdatePrice={setUsdtPrice} currentPrice={usdtPrice} />} />
             <Route path="/trade-active" element={activeTrade && user ? <TradeRoom trade={activeTrade} isBuyer={true} /> : <Navigate to="/" />} />
-            <Route path="/compliance" element={<PolicyPage centerHeading="AML & Compliance" title="AML & Compliance" content={<AMLPolicyContent />} />} />
-            <Route path="/fiu-compliance" element={<PolicyPage centerHeading="FIU Compliance" title="FIU Compliance" content={<FIUComplianceContent />} />} />
-            <Route path="/disclaimer" element={<PolicyPage centerHeading="Website Disclaimer" title="Website Disclaimer" content={<WebsiteDisclaimerContent />} />} />
-            <Route path="/contact" element={<PolicyPage centerHeading="Contact Us" title="Contact Us" content={<ContactUsContent />} />} />
-            <Route path="/terms" element={<PolicyPage centerHeading="Terms and Conditions" title="Terms of Service" content={<TermsOfServiceContent />} />} />
-            <Route path="/cookies" element={<PolicyPage centerHeading="Cookie Policy" title="Cookie Policy" content={<CookiePolicyContent />} />} />
-            <Route path="/risk" element={<PolicyPage centerHeading="Risk Disclosure Statement" title="Risk Disclosure Statement" content={<RiskDisclosureContent />} />} />
-            <Route path="/chargeback" element={<PolicyPage centerHeading="Chargeback Policy" title="Chargeback Policy" content={<ChargebackPolicyContent />} />} />
-            <Route path="/refund" element={<PolicyPage centerHeading="Refund Policy" title="Refund Policy" content={<RefundPolicyContent />} />} />
+            <Route path="/compliance" element={<PolicyPage centerHeading="AML & Compliance" content={<AMLPolicyContent />} />} />
+            <Route path="/fiu-compliance" element={<PolicyPage centerHeading="FIU Compliance" content={<FIUComplianceContent />} />} />
+            <Route path="/disclaimer" element={<PolicyPage centerHeading="Website Disclaimer" content={<WebsiteDisclaimerContent />} />} />
+            <Route path="/contact" element={<PolicyPage centerHeading="Contact Us" content={<ContactUsContent />} />} />
+            <Route path="/terms" element={<PolicyPage centerHeading="Terms and Conditions" content={<TermsOfServiceContent />} />} />
+            <Route path="/cookies" element={<PolicyPage centerHeading="Cookie Policy" content={<CookiePolicyContent />} />} />
+            <Route path="/risk" element={<PolicyPage centerHeading="Risk Disclosure Statement" content={<RiskDisclosureContent />} />} />
+            <Route path="/chargeback" element={<PolicyPage centerHeading="Chargeback Policy" content={<ChargebackPolicyContent />} />} />
+            <Route path="/refund" element={<PolicyPage centerHeading="Refund Policy" content={<RefundPolicyContent />} />} />
           </Routes>
         </main>
 
@@ -421,7 +444,7 @@ const BottomLayout: React.FC = () => {
                 </span>
                 <br className="md:hidden" />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)] transition-all duration-500 animate-pulse">
-                  Trading Experience?
+                  Trading Experience ?
                 </span>
               </h2>
             </div>
@@ -491,7 +514,7 @@ const BottomLayout: React.FC = () => {
             <div className="inline-block glass-card px-6 py-4 md:px-8 md:py-6 rounded-2xl md:rounded-[2rem] border-cyan-500/20 max-w-4xl w-full">
               <p className="text-[9px] md:text-sm font-bold text-gray-400 leading-relaxed">
                 <span className="text-cyan-400 font-orbitron font-black text-[10px] block mb-1 tracking-widest">OFFICIAL DECLARATION</span>
-                <span className="text-white">RadiantVaultOTC&copy;2026,</span> is FIU-IND registered: <span className="text-cyan-400">{APP_CONFIG.FIU_REG_ID}</span><Link to="/admin" className="text-gray-400 hover:text-cyan-400 transition-colors"> .</Link>
+                <span className="text-white">RadiantVaultOTC &copy; 2026,</span> is FIU-IND registered: <span className="text-cyan-400">{APP_CONFIG.FIU_REG_ID}</span><Link to="/admin" className="text-gray-400 hover:text-cyan-400 transition-colors"> .</Link>
               </p>
             </div>
           </div>

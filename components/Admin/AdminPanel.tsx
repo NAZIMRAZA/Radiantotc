@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase';
+import { APP_CONFIG } from '../../constants';
 
 interface AdminPanelProps {
   onUpdatePrice?: (price: number) => void;
@@ -18,50 +19,34 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onUpdatePrice, currentPrice = 9
 
   const handleDownloadCSV = async () => {
     setIsDownloading(true);
+
+    if (!APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL || APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL.includes('YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL')) {
+      alert("Google Sheet Database is not set up! Please read google-sheet-backend-guide.md to set it up.");
+      setIsDownloading(false);
+      return;
+    }
+
     try {
-      let querySnapshot: any = [];
+      const res = await fetch(`${APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL}?action=GET_KYC`);
+      const data = await res.json();
 
-      try {
-        const snap = await getDocs(collection(db, 'kycSubmissions'));
-        snap.forEach(d => querySnapshot.push({ id: d.id, ...d.data() }));
-      } catch (fbErr: any) {
-        console.error("Firestore fetch failed:", fbErr);
-        alert("FIREBASE BLOCKED READING DATA!\n\nYou must go to Firebase Console -> Firestore Database -> Rules -> Change to:\nallow read, write: if true;");
+      const kycRecords = data.kycRecords || [];
+      if (kycRecords.length === 0) {
+        alert("No KYC submissions found in the Google Sheet database.");
         setIsDownloading(false);
         return;
       }
 
-      if (querySnapshot.length === 0) {
-        alert("No KYC submissions found in Cloud Database.");
-        setIsDownloading(false);
-        return;
-      }
+      const headers = Object.keys(kycRecords[0] || {});
+      const rows = [headers];
 
-      const rows = [
-        ['ID', 'Full Name', 'DOB', 'Gender', 'Phone', 'Email', 'Address', 'PAN', 'Aadhaar', 'Selfie Uploaded', 'Submitted At']
-      ];
-
-      querySnapshot.forEach((data: any) => {
-        let date = 'N/A';
-        if (data.submittedAt) {
-          date = typeof data.submittedAt === 'number'
-            ? new Date(data.submittedAt).toLocaleString()
-            : new Date(data.submittedAt.toMillis()).toLocaleString();
-        }
-
-        rows.push([
-          data.id,
-          `"${data.name || ''}"`,
-          data.dob || '',
-          data.gender || '',
-          data.phone || '',
-          data.email || '',
-          `"${(data.address || '').replace(/"/g, '""')}"`,
-          data.pan || '',
-          data.aadhaar || '',
-          data.selfie ? 'Yes' : 'No',
-          `"${date}"`
-        ]);
+      kycRecords.forEach((record: any) => {
+        let rowData = headers.map(header => {
+          let val = record[header] || '';
+          if (header === 'Selfie' && val.length > 100) val = 'Selfie Uploaded (Base64)';
+          return `"${String(val).replace(/"/g, '""')}"`;
+        });
+        rows.push(rowData);
       });
 
       const csvContent = rows.map(e => e.join(",")).join("\n");
@@ -74,8 +59,8 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onUpdatePrice, currentPrice = 9
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      console.error("Error downloading CSV: ", error);
-      alert("Failed to access cloud records. Make sure you have records submitted.");
+      console.error("Error downloading CSV from Google Sheet DB: ", error);
+      alert("Failed to access cloud records. Make sure your Google Sheet App Script is running and accessible.");
     } finally {
       setIsDownloading(false);
     }
@@ -91,19 +76,40 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onUpdatePrice, currentPrice = 9
     }
   };
 
-  const handleUpdatePrice = () => {
+  const handleUpdatePrice = async () => {
     const price = parseFloat(newPrice);
     if (isNaN(price) || price <= 0) return;
 
     setSaveStatus('saving');
-    setTimeout(() => {
-      if (onUpdatePrice) {
-        onUpdatePrice(price);
-        localStorage.setItem('PLATFORM_USDT_PRICE', price.toString());
+
+    if (!APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL || APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL.includes('YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL')) {
+      alert("Google Sheet Database is not set up! Cannot push LIVE rate to database.\n\nPlease read google-sheet-backend-guide.md to configure.");
+      setSaveStatus('idle');
+      return;
+    }
+
+    try {
+      const res = await fetch(APP_CONFIG.GOOGLE_SHEET_WEB_APP_URL, {
+        method: 'POST',
+        body: JSON.stringify({ action: "UPDATE_RATE", rate: price })
+      });
+      const data = await res.json();
+      if (data.result === 'success') {
+        if (onUpdatePrice) {
+          onUpdatePrice(price);
+          localStorage.setItem('PLATFORM_USDT_PRICE', price.toString());
+        }
+        setSaveStatus('success');
+        setTimeout(() => setSaveStatus('idle'), 3000);
+      } else {
+        alert("Database error: " + data.error);
+        setSaveStatus('idle');
       }
-      setSaveStatus('success');
-      setTimeout(() => setSaveStatus('idle'), 3000);
-    }, 800);
+    } catch (err) {
+      console.error("Rate update error:", err);
+      alert("Failed to connect to the Google Sheet API.");
+      setSaveStatus('idle');
+    }
   };
 
   if (!isAuthenticated) {
